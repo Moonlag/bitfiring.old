@@ -1,0 +1,37 @@
+.tournament-prize {
+    display: flex;
+
+    .tournament-prize__icon {
+        margin-right: 16px;
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .tournament-prize__info {}
+
+    .tournament-prize__title {
+        opacity: 0.5;
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 14px;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 1.14;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+    }
+
+    .tournament-prize__bonuses {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 18px;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 1.33;
+    }
+}

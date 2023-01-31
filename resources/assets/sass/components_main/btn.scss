@@ -1,0 +1,269 @@
+button[disabled]{
+    opacity: .7;
+    cursor: default;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    color: #FFFFFF;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 24px;
+    transition: .3s;
+    cursor: pointer;
+
+    &.btn-primary {
+        position: relative;
+        background: #DC5EFF;
+        border-radius: 4px;
+        font-size: 18px;
+        line-height: 24px;
+        z-index: 1;
+        &:before{
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            z-index: -1;
+            border-radius: 4px;
+            background: #DC5EFF;
+            background-size: 300%;
+            transition: all 0.5s ease-in-out;;
+            opacity: 0;
+        }
+
+        &:hover::before{
+            filter: blur(20px);
+            opacity: 1;
+        }
+    }
+
+    &.btn-block{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &.btn-xl {
+        padding: 16px 64px;
+
+        @media all and (max-width:$md3) {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    // Button type
+    &.btn_main {
+        border-radius: 8px;
+        font-size: 18px;
+    }
+
+    &.btn_profile {
+        font-size: 16px;
+        border-radius: 4px;
+    }
+
+    // Button type
+
+    // Button color
+    &.btn_light {
+        position: relative;
+        padding: 12px 16px;
+        background: linear-gradient(135deg, #FF6A28 , #FE2F57, #FE2F57, #FF6A28);
+        background-size: 300%;
+        border-radius: 4px;
+        font-weight: bold;
+        z-index: 1;
+    }
+
+    &.btn_p60{
+        padding: 12px 65px;
+    }
+
+    &.btn_light:hover{
+        animation: animate 6s linear infinite;
+    }
+
+    &.btn_light:before{
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        z-index: -1;
+        border-radius: 4px;
+        background: linear-gradient(135deg, #FF6A28 , #FE2F57, #FE2F57, #FF6A28);
+        background-size: 300%;
+        transition: all 0.5s ease-in-out;;
+        opacity: 0;
+    }
+
+    &.btn_main {
+        position: relative;
+        background: linear-gradient(315deg, #EB3800 0%, #F99705 100%);;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    &.btn_main:before{
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        z-index: -1;
+        border-radius: 4px;
+        background: linear-gradient(315deg, #EB3800 0%, #F99705 100%);;
+        transition: all 0.5s ease-in-out;;
+        opacity: 0;
+    }
+
+    &.btn_main:hover:before{
+        opacity: 1;
+        filter: blur(20px);
+        animation: animate2 6s linear infinite;
+    }
+
+
+    @keyframes animate2{
+        0%{
+            background-position: 0;
+        }
+        100%{
+            background-position: 300%;
+        }
+    }
+
+    &.btn_gradient {
+        position: relative;
+        background: linear-gradient(99.8deg, #C42FED, #639EFF, #639EFF, #C42FED);
+        background-size: 300%;
+        border-radius: 4px;
+    }
+
+    &.btn__transparent {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        padding: 12px;
+    }
+
+    &.btn_gradient:hover{
+        animation: animate 6s linear infinite;
+    }
+    @keyframes animate{
+        0%{
+            background-position: 0%;
+        }
+        100%{
+            background-position: 300%;
+        }
+    }
+
+    &.btn_gradient:before{
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        z-index: -1;
+        border-radius: 4px;
+        background: linear-gradient(99.8deg, #C42FED, #639EFF, #639EFF, #C42FED);
+        background-size: 300%;
+        transition: all 0.5s ease-in-out;;
+        opacity: 0;
+    }
+
+    &.btn_light:hover:before,
+    &.btn_gradient:hover:before,{
+        opacity: 1;
+        filter: blur(20px);
+        animation: animate 6s linear infinite;
+    }
+
+    &.btn_transparent {
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    &.btn-transparent {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    &.btn_error {
+        background-color: $c_error;
+    }
+
+    // Button color
+
+    // Button size
+    &.btn_xl {
+        padding: 16px 58px;
+    }
+
+    &.btn_lg {
+        padding: 12px 65px;
+    }
+
+    &.btn_sm {
+        min-height: 40px;
+        padding: 8px 16px;
+    }
+
+    &.btn_sq {
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        @extend %flex_center;
+    }
+
+    &.btn_w100 {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    // Button size
+
+    // Button arrows
+    .btn__arrow {
+        margin-left: 14px;
+        transition: .3s;
+
+        &.btn__arrow_long {
+            width: 32px;
+            height: 16px;
+        }
+
+        &.btn__arrow_short {
+            width: 12px;
+            height: 12px;
+        }
+
+        &.btn__arrow_angle {
+            width: 8px;
+            height: 14px;
+        }
+    }
+
+    .btn__icon {
+        width: 14px;
+        height: 14px;
+        object-fit: contain;
+    }
+
+    // Button arrows
+}

@@ -1,0 +1,21 @@
+//customize bootstrap
+@import 'bs-custom';
+
+
+$white: #FFFFFF;
+$black: #000000;
+
+$bg-color: #09051D;
+
+$font_family: 'apple-system', sans-serif;
+
+$embed-responsive-aspect-ratios: () !default;
+$embed-responsive-aspect-ratios: join(
+            (
+                    (21 9),
+                    (16 9),
+                    (4 3),
+                    (1 1),
+            ),
+        $embed-responsive-aspect-ratios
+);

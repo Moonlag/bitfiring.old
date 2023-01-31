@@ -1,0 +1,12 @@
+.title-label {
+    @extend %flex_center;
+    color: $c_profile_main;
+    font-family: $fnt_main;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    text-transform: uppercase;
+    border: 1px solid $c_profile_main;
+    border-radius: 10px;
+    padding: 3px 8px;
+}

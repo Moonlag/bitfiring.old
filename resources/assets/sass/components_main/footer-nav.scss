@@ -1,0 +1,48 @@
+.footer-nav {
+    padding: 12px 0;
+
+    &.footer-nav__mb {
+        margin-bottom: size(38, 18);
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        li {
+            padding: 10px 19px;
+
+            a {
+                color: $c_text_primary;
+                font-family: $fnt_main;
+                font-size: 16px;
+                font-weight: normal;
+                font-style: normal;
+                letter-spacing: normal;
+                line-height: 1;
+
+                &:hover {
+                    opacity: .7;
+                }
+
+                @media all and (max-width:$md2) {
+                    font-size: 14px;
+                }
+            }
+
+            @media all and (max-width:$md3) {
+                @include flex(2);
+                padding: 6px 0px 6px 10px;
+
+                &:nth-child(2n) {
+                    padding-right: 10px;
+                }
+            }
+        }
+
+        @media all and (max-width:$md3) {
+            margin: 0;
+        }
+    }
+}

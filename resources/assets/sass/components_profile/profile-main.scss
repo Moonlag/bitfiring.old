@@ -1,0 +1,44 @@
+.profile-main {
+    overflow: hidden;
+    padding: 48px;
+    flex: 1 1 0%;
+
+
+    @media all and (max-width:$md1) {
+        padding: 24px;
+    }
+
+    @media all and (max-width:$md3) {
+        padding: 16px;
+    }
+
+    // .profile-main__header {
+    //     @extend %flex_align;
+
+    //     .aside-toggler {
+    //         margin-right: 18px;
+    //         z-index: 1001;
+    //     }
+    // }
+
+    .profile-main__heading {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 1.2;
+        display: flex;
+        margin-bottom: 32px;
+
+
+        @media all and (max-width:$md2) {
+            margin-bottom: 24px;
+        }
+
+        @media all and (max-width:$md3) {
+            font-size: 24px;
+            margin-left: 40px;
+            margin-bottom: 16px;
+        }
+    }
+}

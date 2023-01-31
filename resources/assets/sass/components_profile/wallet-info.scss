@@ -1,0 +1,114 @@
+.wallet-info {
+    padding: 24px;
+    flex: 1 1 0%;
+
+    @media all and (max-width:$md2) {
+       .btn {
+           width: 100%;
+       }
+    }
+
+    @media all and (max-width:$md3) {
+        @include flex(1);
+        padding: 16px 0;
+    }
+
+    .wallet-info__form {
+        max-width: 574px;
+        width: 100%;
+
+        @media all and (max-width:$md3) {
+            max-width: 100%;
+        }
+    }
+
+    .wallet-info__header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 32px;
+
+        @media all and (max-width:$md2) {
+            margin-bottom: 16px;
+        }
+
+    }
+
+    .wallet-info__card-img {
+        height: 32px;
+        max-width: 78px;
+        object-fit: contain;
+
+        @media all and (max-width:$md2) {
+            height: 24px;
+            max-width: 59px;
+        }
+    }
+
+    .wallet-info__heading {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1.14;
+
+        @media all and (max-width:$md2) {
+            font-size: 24px;
+        }
+
+        @media all and (max-width:$md3) {
+            font-size: 20px;
+        }
+    }
+
+    .wallet-info__block {
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+
+        @media all and (max-width:$md2) {
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    .wallet-info__title {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.33;
+
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+
+    .wallet-info__text {
+        color: $c_profile_secondary;
+        font-family: $fnt_main;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+
+        @media all and (max-width:$md2) {
+            font-size: 14px;
+        }
+    }
+
+    .wallet-info__params {
+        &:not(:last-child) {
+            margin-bottom: 36px;
+        }
+    }
+
+    .wallet-info__row {}
+
+    .wallet-info__names {
+        margin-right: 32px;
+    }
+
+    .wallet-info__value {}
+}

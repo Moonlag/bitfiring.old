@@ -1,0 +1,244 @@
+.profile-aside {
+    transition: .3s;
+    position: relative;
+    z-index: 10;
+
+    .user-nav__icon {
+        width: 24px;
+        height: 24px;
+        fill: none;
+        stroke: white;
+
+        &.user-nav__icon_gold {
+            fill: $c_gold;
+        }
+    }
+
+    @media all and (max-width: $md1) {
+        width: 70px;
+    }
+
+    @media all and (max-width: $md3) {
+        // display: none;
+        position: fixed;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform: translate(-100%);
+        width: auto;
+    }
+
+    .profile-aside__inner {
+        background: linear-gradient(99.8deg, rgba(196, 47, 237, 0.5) 14.73%, rgba(99, 158, 255, 0.5) 88.93%);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        width: 288px;
+        height: 100%;
+
+        @media all and (max-width: $md1) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70px;
+            height: 100%;
+            transition: .7s;
+        }
+
+        @media all and (max-width: $md3) {
+            position: relative;
+            width: auto;
+        }
+    }
+
+
+    .profile-aside__header {
+        padding: 8px 0;
+
+        @media all and (max-width: $md1) {
+            padding: 24px;
+        }
+
+        @media all and (max-width: $md2) {
+            min-height: 65px;
+        }
+
+        @media all and (max-width: $md3) {
+            padding: 0;
+        }
+    }
+
+    .profile-aside__block {
+
+        @media all and (max-width: $md3) {
+            // padding: 16px;
+        }
+    }
+
+    .profile-aside__logo {
+        transition: .3s;
+        max-width: 165px;
+        @extend %flex_center;
+        margin: 0 auto;
+        transition: 1s, opacity .5s;
+
+        img {
+            width: 200px;
+        }
+
+        @media all and (max-width: $md1) {
+            margin-left: -300px;
+            opacity: 0;
+            padding-left: 18px;
+        }
+
+        @media all and (max-width: $md3) {
+            display: none;
+        }
+    }
+
+    .profile-aside__user {
+        padding: 12px 0;
+        @media all and (max-width: $md1) {
+            display: none;
+        }
+    }
+
+    .profile-footer {
+        padding: 24px 24px;
+        margin-top: auto;
+        @media all and (max-width: $md1) {
+            padding: 0;
+        }
+    }
+
+    .profile-aside__balance {
+        padding: 24px;
+
+
+        & .balance-container {
+            padding: 24px 14px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            box-sizing: border-box;
+            //backdrop-filter: blur(20px);
+            /* Note: backdrop-filter has minimal browser support */
+
+            border-radius: 4px;
+        }
+
+        @media all and (max-width: $md1) {
+            display: none;
+        }
+    }
+
+    .profile-aside__menu {
+        padding: 12px 0;
+    }
+
+    .profile-aside__lang {
+        margin-bottom: 24px;
+
+        @media all and (max-width: $md1) {
+            * {
+                font-size: 0;
+            }
+
+            .nice-select {
+                .option {
+                    padding: 7px 10px;
+                }
+
+                img {
+                    margin-right: 0;
+                }
+            }
+
+            .lang-aside-select-block {
+
+                padding: 0px;
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+
+        @media all and (max-width: $md3) {
+            padding: 16px;
+        }
+    }
+
+    .profile-aside__btn {
+        @media all and (max-width: $md1) {
+            display: none;
+        }
+    }
+
+    .profile-aside__mobile{
+        display: none;
+
+        .link-aside {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        @media all and (max-width: $md1) {
+            display: flex;
+        }
+    }
+
+    &.aside-open {
+        .profile-aside__inner {
+            width: 288px;
+        }
+
+        .link-aside__text {
+            margin-left: 0;
+            opacity: 1;
+            transition: .7s, opacity 3s;
+        }
+
+        .profile-aside__logo {
+            margin-left: 0px;
+            opacity: 1;
+            transition: .7s, opacity 3s;
+        }
+
+        .profile-aside__inner {
+            width: 288px;
+            @media all and (max-width: $md3) {
+                width: auto;
+            }
+        }
+
+        @media all and (max-width: $md3) {
+            transform: translate(0);
+        }
+    }
+}
+
+.profile-aside__burger {
+    margin: 6px 0;
+
+    @media all and (max-width: $md1) {
+        display: block;
+    }
+
+    @media all and (max-width: $md3) {
+        position: fixed;
+        top: 20px;
+        left: 18px;
+        z-index: 1001;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 35px;
+            height: 35px;
+            transform: translate(-50%, -50%);
+            background-color: $c_profile_bg_uplayer;
+        }
+    }
+}

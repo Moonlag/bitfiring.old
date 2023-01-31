@@ -1,0 +1,57 @@
+.wallet-form {
+    .wallet-form__radios {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .wallet-form__radio {
+        $params: (width:100%,
+                height:auto,
+                bgColor: transparent,
+                bgColorActive: $c_profile_secondary,
+                border: 1px,
+                radius: 0px,
+                borderColor: transparent,
+                borderColorActive: $c_profile_secondary,
+                bullet: #fff,
+                bulletActive: #fff,
+                marginRight: 0px);
+
+        @media all and (max-width: $md3) {
+            text-align: center;
+        }
+
+        @include checkbox($params...);
+        cursor: default;
+
+        .checkbox__box {
+            cursor: pointer;
+        }
+
+        &:not(:last-child) {
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        input:checked~.checkbox__box {
+            pointer-events: none;
+
+            .checkbox__caption {
+                color: $c_profile_bg_secondary;
+            }
+        }
+
+        .checkbox__caption {
+            color: $c_text_primary;
+            font-family: $fnt_main;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+            padding: 12px;
+
+            @media all and (max-width:$md3) {
+                padding: 12px 2px;
+            }
+        }
+    }
+}

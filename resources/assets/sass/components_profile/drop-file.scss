@@ -1,0 +1,37 @@
+.drop-file {
+    border-radius: 4px;
+    border: 1px dashed rgba($c_profile_secondary, 0.3);
+    border-width: 2px;
+    padding: 24px 16px;
+    @extend %flex_center;
+    flex-direction: column;
+    cursor: pointer;
+
+    .drop-file__title {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 14px;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 1.43;
+
+        color: $c_profile_main;
+        font-family: $fnt_main;
+        font-weight: 700;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: normal;
+    }
+
+    .drop-file__text {
+        color: $c_profile_secondary;
+        font-family: $fnt_main;
+        font-size: 14px;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 1.43;
+    }
+
+}

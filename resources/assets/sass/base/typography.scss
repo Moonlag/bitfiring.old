@@ -1,0 +1,119 @@
+// .text {
+//     font-family: $fnt_main;
+//     font-size: 14px;
+//     font-weight: 400;
+//     line-height: 20px;
+// }
+
+// color
+.text_primary {
+    color: $c_text_primary !important;
+}
+
+.text_secondary {
+    color: $c_profile_secondary !important;
+}
+
+.text_main {
+    color: $c_profile_main !important;
+}
+
+.text_p {
+    color: $c_text_secondary !important;
+}
+
+.text_gold {
+    color: $c_gold !important;
+}
+.text_unlerline {
+    text-decoration: underline;
+}
+// color
+.text-fw_3 {
+    font-weight: 300 !important;
+}
+
+.text-fw_4 {
+    font-weight: 400 !important;
+}
+
+.text-fw_6 {
+    font-weight: 600 !important;
+}
+
+.text-fw_7 {
+    font-weight: 700 !important;
+}
+
+.text-fw_9 {
+    font-weight: 900 !important;
+}
+
+
+
+// LINE HIGHT
+@include text('.text-height-', 'line-height', 48, 16);
+// LINE HIGHT
+
+
+// FONT SIZE
+@include text('.text-', 'font-size', 48, 4);
+
+.text-14 {
+    font-size: 14px !important;
+}
+
+.text-18 {
+    font-size: 18px !important;
+}
+
+@media all and (max-width:$md1) {
+    @include text('.text-lg-', 'font-size', 48, 4);
+
+    .text-lg-14 {
+        font-size: 14px !important;
+    }
+
+    .text-lg-18 {
+        font-size: 18px !important;
+    }
+}
+
+@media all and (max-width:$md2) {
+    @include text('.text-md-', 'font-size', 48, 4);
+
+    .text-md-14 {
+        font-size: 14px !important;
+    }
+
+    .text-md-18 {
+        font-size: 18px !important;
+    }
+}
+
+@media all and (max-width:$md3) {
+    @include text('.text-sm-', 'font-size', 48, 4);
+
+    .text-sm-14 {
+        font-size: 14px !important;
+    }
+
+    .text-sm-18 {
+        font-size: 18px !important;
+    }
+}
+
+.text_center {
+    text-align: center;
+}
+
+.text_left {
+    text-align: left;
+}
+
+// FONT SIZE
+.center_message {
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+}

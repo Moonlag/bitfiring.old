@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+
+body {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: #22283a;
+}
+/* ------------------------------------------------------------------- */
+/* BODY - ТОЛЬКО ДЛЯ ДЕМОНСТРАЦИИ КНОПКИ. ПОТОМ МОЖНО УДАЛИТЬ ЭТОТ СТИЛЬ */
+/* ------------------------------------------------------------------ */
+
+.button {
+	position: relative;
+	width: 110px;
+	height: 30px;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.layer1-shadow {
+	width: 100%;
+	height: 100%;
+}
+
+.layer1-border-out {
+	-webkit-clip-path: polygon(0% 0%, 95% 0%, 100% 30%, 100% 100%, 5% 100%, 0% 70%);
+	clip-path: polygon(0% 0%, 95% 0%, 100% 30%, 100% 100%, 5% 100%, 0% 70%);
+	width: 100%;
+	height: 100%;
+	background-color: #c5eaff;
+	position: absolute;
+	display: block;
+}
+
+.layer2-border-inside {
+	background-color: #212638;
+	display: block;
+	position: absolute;
+	-webkit-clip-path: polygon(0% 0%, 95% 0%, 100% 30%, 100% 100%, 5% 100%, 0% 70%);
+	clip-path: polygon(0% 0%, 95% 0%, 100% 30%, 100% 100%, 5% 100%, 0% 70%);
+	width: calc(100% - 2px);
+	height: calc(100% - 2px);
+	top: 1px;
+	left: 1px;
+}
+
+.layer3-shadow {
+	-webkit-filter: drop-shadow(0px 0px 12px #009ef3ea);
+	filter: drop-shadow(0px 0px 12px #009ef3e3);
+	position: absolute;
+	-webkit-transition: all 0.3s ease-out 0s;
+	-o-transition: all 0.3s ease-out 0s;
+	transition: all 0.3s ease-out 0s;
+	will-change: transform;
+	box-sizing: border-box;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.button:hover .layer3-shadow {
+	-webkit-filter: drop-shadow(0px 0px 23px #009ef390);
+	filter: drop-shadow(0px 0px 23px #009ef390);
+}
+
+.layer3-background {
+	-webkit-clip-path: polygon(0% 0%, 95% 0%, 100% 30%, 100% 100%, 5% 100%, 0% 70%);
+	clip-path: polygon(0% 0%, 95% 0%, 100% 30%, 100% 100%, 5% 100%, 0% 70%);
+	position: absolute;
+	width: calc(100% - 10px);
+	/* width: 280px; */
+	height: calc(100% - 10px);
+	top: 5px;
+	left: 5px;
+	/* cursor: pointer; */
+	object-fit: cover;
+	object-position: center center;
+}
+
+.layer4-text {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+.layer4-text p {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	text-transform: uppercase;
+	color: #fff;
+	padding: 0 20px;
+}

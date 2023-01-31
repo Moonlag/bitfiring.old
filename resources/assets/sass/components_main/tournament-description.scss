@@ -1,0 +1,62 @@
+.tournament-description {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 64px;
+
+    .tournament-description__dash {
+
+        @media all and (max-width:$md3) {
+            @include flex(1);
+        }
+    }
+
+    .tournament-description__prize {
+        margin-bottom: 40px;
+
+        @media all and (max-width:$md2) {
+            margin-bottom: 32px;
+        }
+
+        @media all and (max-width:$md3) {
+            margin-bottom: 25px;
+            justify-content: center;
+        }
+    }
+
+    .tournament-description__expire {
+        margin-bottom: 32px;
+
+        @media all and (max-width:$md3) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .tournament-description__btn {
+        margin-bottom: 32px;
+        max-width: 328px;
+
+        a {
+            width: 100%
+        }
+
+        @media all and (max-width:$md3) {
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+
+    .tournament-description__text-block {
+        @include flex(1120, 672);
+
+        @media all and (max-width:$md2) {
+            @include flex(728, 368);
+        }
+
+        @media all and (max-width:$md3) {
+            @include flex(1);
+        }
+    }
+}

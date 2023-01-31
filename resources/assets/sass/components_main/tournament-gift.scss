@@ -1,0 +1,97 @@
+.tournament-gift {
+    border-radius: 8px;
+    padding: 2px;
+
+    .tournament-gifts__title {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.33;
+    }
+
+    .tournament-gift__inner {
+        @extend %flex_align;
+        min-height: 94px;
+        padding: 24px;
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 2px solid transparent;
+        background-color: $c_bg_dark;
+    }
+
+    .tournament-gift__counter {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        @extend %flex_center;
+        margin-right: 16px;
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.33;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            border: 1px solid $c_text_primary;
+            opacity: 0.3;
+            border-radius: 50%;
+        }
+    }
+
+    .tournament-gift__counter_success {}
+
+    .tournament-gift__caption {}
+
+    .tournament-gift__title {
+        opacity: 0.5;
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.14;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+    }
+
+    .tournament-gift__bonuses {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.33;
+    }
+
+    &.tournament-gift_succes {
+        background: linear-gradient(135deg, rgba(#AECE04, .3) 0%, rgba(#3b8d00, .3) 100%);
+
+        .tournament-gift__counter {
+            background: linear-gradient(135deg, #aece04 0%, #3b8d00 100%);
+        }
+    }
+
+    &.tournament-gift_amber {
+        background: linear-gradient(135deg, rgba(#f16f11, .3) 0%, rgba(#f5af19, .3) 100%);
+
+        .tournament-gift__counter {
+            background-image: linear-gradient(-45deg, #f16f11 0%, #f5af19 100%);
+        }
+    }
+
+    &.tournament-gift_alarm {
+        background: linear-gradient(135deg, rgba(#ff6a28, .3) 0%, rgba(#fe2f57, .3) 100%);
+
+        .tournament-gift__counter {
+            background-image: linear-gradient(135deg, #ff6a28 0%, #fe2f57 100%);
+        }
+    }
+}

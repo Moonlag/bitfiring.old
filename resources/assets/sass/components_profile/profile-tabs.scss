@@ -1,0 +1,50 @@
+.profile-tabs {
+
+    .profile-tabs__head {
+        position: relative;
+        margin-bottom: 48px;
+        overflow-x: auto;
+        display: flex;
+        justify-content: flex-start;
+        box-shadow: inset 0 -10px 0 -8px rgba(255, 255, 255, 0.1);
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @media all and (max-width:$md1) {
+            margin-bottom: 32px;
+        }
+
+        @media all and (max-width:$md3) {
+            margin-bottom: 24px;
+            width: calc(100vw - 32px);
+            max-width: calc(100vw - 32px);
+        }
+    }
+
+    .profile-tabs__header {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 24px;
+        padding: 8px 0;
+        margin-right: 16px;
+
+        &.tab__active {
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                border-radius: 4px;
+                background-color: $c_profile_main;
+            }
+        }
+    }
+}

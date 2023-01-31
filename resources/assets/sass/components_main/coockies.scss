@@ -1,0 +1,47 @@
+.coockies {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: size(24, 16);
+    background-color: #7C2494;
+    display: flex;
+    @extend %flex_center;
+    z-index: 10;
+
+    .cookies__text {
+        opacity: 0.7;
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: size(14, 12);
+        font-weight: 500;
+        line-height: 1.14;
+        margin-right: 24px;
+        @media all and (max-width:$md2) {
+            margin-left: 8px;
+            margin-right: 0;
+            order: 1;
+        }
+
+        a {
+            text-decoration: underline;
+
+            color: $c_text_primary;
+            font-family: $fnt_main;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.14;
+
+            &:hover {
+                opacity: .7;
+            }
+        }
+    }
+
+    .coockies__btn {
+        @media all and (max-width:$md3) {
+            font-size: 13px;
+            padding: 8px;
+        }
+    }
+}

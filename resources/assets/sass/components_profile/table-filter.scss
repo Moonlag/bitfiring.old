@@ -1,0 +1,31 @@
+.table-filter {
+    .table-filter__select {
+        flex: 1 1 0%;
+        max-width: 204px;
+
+        @media all and (max-width:$md3) {
+            @include flex(1);
+
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    .table-filter__couple {
+        flex: 2 1 0%;
+        max-width: 360px;
+
+        @media all and (max-width:$md3) {
+            @include flex(1);
+
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    @media all and (max-width:$md3) {
+        flex-direction: column;
+    }
+}

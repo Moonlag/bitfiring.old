@@ -1,0 +1,108 @@
+// FONTS
+@import "./fonts.scss";
+// FONTS
+
+
+// BASE
+@import "./base/variables.scss";
+@import "./base/mixins.scss";
+@import "./base/normalize.scss";
+@import "./base/helpers.scss";
+@import "./base/grid.scss";
+@import "./base/placeholders.scss";
+@import "./base/typography.scss";
+// BASE
+
+
+// MODULES
+@import "./modules/ui.scss";
+@import "./modules/forms.scss";
+@import "./modules/sliders.scss";
+@import "./modules/text-block.scss";
+// MODULES
+
+// LAYOUT
+@import "./layout/navbar.scss";
+@import "./layout/header.scss";
+@import "./layout/breadcrump.scss";
+@import "./layout/popups.scss";
+@import "./layout/gotop.scss";
+@import "./layout/footer.scss";
+
+// LAYOUT
+
+
+// VENDORS
+@import "./vendors/nice-select.scss";
+// @import "./vendors/choises/base.scss";
+@import "./vendors/choises/choices.scss";
+
+// VENDORS
+
+
+// COMPONENTS MAIN
+@import "./components_main/btn.scss";
+@import "./components_main/games-grid.scss";
+@import "./components_main/top-bg.scss";
+@import "./components_main/game-preview.scss";
+@import "./components_main/popular-slider.scss";
+@import "./components_main/show-more.scss";
+@import "./components_main/home-nav.scss";
+@import "./components_main/home-tab.scss";
+@import "./components_main/home-categories.scss";
+@import "./components_main/brands.scss";
+@import "./components_main/footer-nav.scss";
+@import "./components_main/language.scss";
+@import "./components_main/provider-card.scss";
+@import "./components_main/link-nav.scss";
+@import "./components_main/user-nav.scss";
+@import "./components_main/winner-preview.scss";
+@import "./components_main/winner-tabs.scss";
+@import "./components_main/tournament-expire.scss";
+@import "./components_main/tournament-preview.scss";
+@import "./components_main/tournament-prize.scss";
+@import "./components_main/header-img.scss";
+@import "./components_main/tournament-description.scss";
+@import "./components_main/tournament-gift.scss";
+@import "./components_main/tournament-gifts.scss";
+@import "./components_main/leadership-board.scss";
+@import "./components_main/bonus-card.scss";
+@import "./components_main/bonuses.scss";
+@import "./components_main/payment.scss";
+@import "./components_main/page-404.scss";
+@import "./components_main/slot.scss";
+@import "./components_main/search-slot.scss";
+@import "./components_main/notification-nav.scss";
+@import "./components_main/notification.scss";
+@import "./components_main/wallet-nav.scss";
+@import "./components_main/coockies.scss";
+@import "./components_main/top-game.scss";
+@import "./components_main/search-prov.scss";
+@import "./components_main/scoreboard.scss";
+@import "./components_main/all-providers.scss";
+
+// COMPONENTS MAIN
+
+// COMPONENTS PROFILE
+@import "./components_profile/profile-aside.scss";
+@import "./components_profile/link-aside.scss";
+@import "./components_profile/balance-aside.scss";
+@import "./components_profile/profile-main.scss";
+@import "./components_profile/profile-card.scss";
+@import "./components_profile/progress-profile.scss";
+@import "./components_profile/profile-block.scss";
+@import "./components_profile/form-line.scss";
+@import "./components_profile/profile-table.scss";
+@import "./components_profile/table-filter.scss";
+@import "./components_profile/profile-tabs.scss";
+@import "./components_profile/title-label.scss";
+@import "./components_profile/drop-file.scss";
+@import "./components_profile/wallet-dash.scss";
+@import "./components_profile/bank-card.scss";
+@import "./components_profile/wallet-ballance.scss";
+@import "./components_profile/wallet-info.scss";
+@import "./components_profile/wallet-form.scss";
+@import "./components_profile/mark-dot.scss";
+@import "./components_profile/aside-toggler.scss";
+
+// COMPONENTS PROFILE

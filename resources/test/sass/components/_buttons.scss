@@ -1,0 +1,19 @@
+.btn{
+    display: inline-block;
+    padding: 8px 16px;
+    color: $white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.btn-primary{
+    background: linear-gradient(99.8deg, #C42FED 14.73%, #639EFF 88.93%);
+    border-radius: 4px;
+}
+
+.btn-xl{
+    padding: 16px 64px;
+}

@@ -1,0 +1,30 @@
+// Core variables and mixins
+@import "theme/variables";
+
+// Vendor
+@import "~bootstrap/scss/bootstrap";
+@import "~select2/dist/css/select2.min";
+@import "~select2-bootstrap-theme/src/select2-bootstrap";
+@import "~dropzone/dist/min/basic.min";
+@import "~dropzone/dist/min/dropzone.min";
+@import "~cropperjs/dist/cropper";
+@import "~simplemde/dist/simplemde.min";
+@import "~flatpickr/dist/flatpickr.min";
+@import "~leaflet/dist/leaflet";
+@import "~quill/dist/quill.snow";
+@import "~frappe-charts/dist/frappe-charts.min";
+
+// App
+@import "core/mixins";
+@import "core/reset";
+@import "core/layout";
+@import "core/buttons";
+@import "core/modals";
+@import "plugins/plugin";
+@import "theme/colors";
+@import "core/utilities";
+@import "core/tables";
+@import "core/form";
+@import "plugins/dropzone";
+@import "plugins/load-opacity";
+@import "plugins/accordion";

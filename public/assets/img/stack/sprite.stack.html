@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<title>SVG stack preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+
+<!--
+
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as stack SVGs, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+
+-->
+
+<style type="text/css">
+	.svg-add-dims { width: 20px; height: 20px; }
+	.svg-angle-dims { width: 512px; height: 512px; }
+	.svg-angle_right-dims { width: 792.049px; height: 792.049px; }
+	.svg-badge_city-dims { width: 20px; height: 20px; }
+	.svg-badge_date-dims { width: 20px; height: 20px; }
+	.svg-badge_email-dims { width: 20px; height: 16px; }
+	.svg-badge_flag-dims { width: 15px; height: 20px; }
+	.svg-badge_location-dims { width: 16px; height: 20px; }
+	.svg-badge_lock-dims { width: 14px; height: 20px; }
+	.svg-badge_post-dims { width: 20px; height: 20px; }
+	.svg-badge_user-dims { width: 18px; height: 20px; }
+	.svg-badge_wallet-dims { width: 20px; height: 20px; }
+	.svg-bell-dims { width: 18px; height: 20px; }
+	.svg-bonuses-dims { width: 20px; height: 20px; }
+	.svg-cart-dims { width: 512px; height: 512px; }
+	.svg-down-arrow-dims { width: 292.362px; height: 292.362px; }
+	.svg-home-categories_1-dims { width: 24px; height: 24px; }
+	.svg-home-categories_2-dims { width: 24px; height: 24px; }
+	.svg-home-categories_3-dims { width: 24px; height: 24px; }
+	.svg-home-categories_4-dims { width: 24px; height: 24px; }
+	.svg-home-categories_5-dims { width: 24px; height: 24px; }
+	.svg-home-categories_6-dims { width: 24px; height: 24px; }
+	.svg-link-nav-dims { width: 16px; height: 16px; }
+	.svg-location-dims { width: 682px; height: 682px; }
+	.svg-main-nav__icon_1-dims { width: 40px; height: 40px; }
+	.svg-main-nav__icon_2-dims { width: 44px; height: 44px; }
+	.svg-main-nav__icon_3-dims { width: 40px; height: 40px; }
+	.svg-main-nav__icon_4-dims { width: 40px; height: 40px; }
+	.svg-main-nav__icon_5-dims { width: 44px; height: 44px; }
+	.svg-main-nav__icon_6-dims { width: 44px; height: 42px; }
+	.svg-main-nav__icon_7-dims { width: 40px; height: 40px; }
+	.svg-new-dims { width: 33px; height: 40px; }
+	.svg-providers-dims { width: 40px; height: 28px; }
+	.svg-rating-dims { width: 512px; height: 512px; }
+	.svg-search-dims { width: 30.239px; height: 30.239px; }
+	.svg-select-dims { width: 22px; height: 22px; }
+	.svg-show-more-dims { width: 21px; height: 22px; }
+	.svg-slot_close-dims { width: 24px; height: 24px; }
+	.svg-slot_screen-dims { width: 24px; height: 24px; }
+	.svg-slot_search-dims { width: 24px; height: 24px; }
+	.svg-slot_time-dims { width: 16px; height: 16px; }
+	.svg-user-dims { width: 512px; height: 512px; }
+	.svg-user-nav-dims { width: 20px; height: 20px; }
+	.svg-user-profile-dims { width: 20px; height: 20px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+		<header>
+			<h1>SVG stack preview</h1>
+			<p>This preview features an SVG stack. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+			<ul>
+				<li>Your browser has to <a href="http://caniuse.com/#feat=svg-fragment" target="_blank">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+				<li>Support for SVG fragment identifiers hasn't always been that decent. For older browsers you will have to use some prolyfill like <a href="https://github.com/preciousforever/SVG-Stacker/blob/master/fixsvgstack.jquery.js" target="_blank">fixsvgstack.jquery.js</a>.</li>
+			</ul>
+		</header>
+		<section>
+
+<!--
+
+SVG stack
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) to reference certain portions of the
+external sprite. By default, all shapes inside the sprite are hidden by CSS. The `:target` pseudo
+selector is used to show the very shape that is referenced by the fragment identifier.
+
+-->
+
+			<ul>
+
+				<li title="add">
+					<div class="icon-box">
+
+						<!-- add -->
+						<img src="../icons/icons.svg#add" class="svg-add-dims" alt="add"/>
+
+					</div>
+					<h2>add</h2>
+				</li>
+				<li title="angle">
+					<div class="icon-box">
+
+						<!-- angle -->
+						<img src="../icons/icons.svg#angle" class="svg-angle-dims" alt="angle"/>
+
+					</div>
+					<h2>angle</h2>
+				</li>
+				<li title="angle_right">
+					<div class="icon-box">
+
+						<!-- angle_right -->
+						<img src="../icons/icons.svg#angle_right" class="svg-angle_right-dims" alt="angle_right"/>
+
+					</div>
+					<h2>angle_right</h2>
+				</li>
+				<li title="badge_city">
+					<div class="icon-box">
+
+						<!-- badge_city -->
+						<img src="../icons/icons.svg#badge_city" class="svg-badge_city-dims" alt="badge_city"/>
+
+					</div>
+					<h2>badge_city</h2>
+				</li>
+				<li title="badge_date">
+					<div class="icon-box">
+
+						<!-- badge_date -->
+						<img src="../icons/icons.svg#badge_date" class="svg-badge_date-dims" alt="badge_date"/>
+
+					</div>
+					<h2>badge_date</h2>
+				</li>
+				<li title="badge_email">
+					<div class="icon-box">
+
+						<!-- badge_email -->
+						<img src="../icons/icons.svg#badge_email" class="svg-badge_email-dims" alt="badge_email"/>
+
+					</div>
+					<h2>badge_email</h2>
+				</li>
+				<li title="badge_flag">
+					<div class="icon-box">
+
+						<!-- badge_flag -->
+						<img src="../icons/icons.svg#badge_flag" class="svg-badge_flag-dims" alt="badge_flag"/>
+
+					</div>
+					<h2>badge_flag</h2>
+				</li>
+				<li title="badge_location">
+					<div class="icon-box">
+
+						<!-- badge_location -->
+						<img src="../icons/icons.svg#badge_location" class="svg-badge_location-dims" alt="badge_location"/>
+
+					</div>
+					<h2>badge_location</h2>
+				</li>
+				<li title="badge_lock">
+					<div class="icon-box">
+
+						<!-- badge_lock -->
+						<img src="../icons/icons.svg#badge_lock" class="svg-badge_lock-dims" alt="badge_lock"/>
+
+					</div>
+					<h2>badge_lock</h2>
+				</li>
+				<li title="badge_post">
+					<div class="icon-box">
+
+						<!-- badge_post -->
+						<img src="../icons/icons.svg#badge_post" class="svg-badge_post-dims" alt="badge_post"/>
+
+					</div>
+					<h2>badge_post</h2>
+				</li>
+				<li title="badge_user">
+					<div class="icon-box">
+
+						<!-- badge_user -->
+						<img src="../icons/icons.svg#badge_user" class="svg-badge_user-dims" alt="badge_user"/>
+
+					</div>
+					<h2>badge_user</h2>
+				</li>
+				<li title="badge_wallet">
+					<div class="icon-box">
+
+						<!-- badge_wallet -->
+						<img src="../icons/icons.svg#badge_wallet" class="svg-badge_wallet-dims" alt="badge_wallet"/>
+
+					</div>
+					<h2>badge_wallet</h2>
+				</li>
+				<li title="bell">
+					<div class="icon-box">
+
+						<!-- bell -->
+						<img src="../icons/icons.svg#bell" class="svg-bell-dims" alt="bell"/>
+
+					</div>
+					<h2>bell</h2>
+				</li>
+				<li title="bonuses">
+					<div class="icon-box">
+
+						<!-- bonuses -->
+						<img src="../icons/icons.svg#bonuses" class="svg-bonuses-dims" alt="bonuses"/>
+
+					</div>
+					<h2>bonuses</h2>
+				</li>
+				<li title="cart">
+					<div class="icon-box">
+
+						<!-- cart -->
+						<img src="../icons/icons.svg#cart" class="svg-cart-dims" alt="cart"/>
+
+					</div>
+					<h2>cart</h2>
+				</li>
+				<li title="down-arrow">
+					<div class="icon-box">
+
+						<!-- down-arrow -->
+						<img src="../icons/icons.svg#down-arrow" class="svg-down-arrow-dims" alt="down-arrow"/>
+
+					</div>
+					<h2>down-arrow</h2>
+				</li>
+				<li title="home-categories_1">
+					<div class="icon-box">
+
+						<!-- main-categories_1 -->
+						<img src="../icons/icons.svg#home-categories_1" class="svg-home-categories_1-dims" alt="home-categories_1"/>
+
+					</div>
+					<h2>home-categories_1</h2>
+				</li>
+				<li title="home-categories_2">
+					<div class="icon-box">
+
+						<!-- main-categories_2 -->
+						<img src="../icons/icons.svg#home-categories_2" class="svg-home-categories_2-dims" alt="home-categories_2"/>
+
+					</div>
+					<h2>home-categories_2</h2>
+				</li>
+				<li title="home-categories_3">
+					<div class="icon-box">
+
+						<!-- main-categories_3 -->
+						<img src="../icons/icons.svg#home-categories_3" class="svg-home-categories_3-dims" alt="home-categories_3"/>
+
+					</div>
+					<h2>home-categories_3</h2>
+				</li>
+				<li title="home-categories_4">
+					<div class="icon-box">
+
+						<!-- main-categories_4 -->
+						<img src="../icons/icons.svg#home-categories_4" class="svg-home-categories_4-dims" alt="home-categories_4"/>
+
+					</div>
+					<h2>home-categories_4</h2>
+				</li>
+				<li title="home-categories_5">
+					<div class="icon-box">
+
+						<!-- main-categories_5 -->
+						<img src="../icons/icons.svg#home-categories_5" class="svg-home-categories_5-dims" alt="home-categories_5"/>
+
+					</div>
+					<h2>home-categories_5</h2>
+				</li>
+				<li title="home-categories_6">
+					<div class="icon-box">
+
+						<!-- main-categories_6 -->
+						<img src="../icons/icons.svg#home-categories_6" class="svg-home-categories_6-dims" alt="home-categories_6"/>
+
+					</div>
+					<h2>home-categories_6</h2>
+				</li>
+				<li title="link-nav">
+					<div class="icon-box">
+
+						<!-- link-nav -->
+						<img src="../icons/icons.svg#link-nav" class="svg-link-nav-dims" alt="link-nav"/>
+
+					</div>
+					<h2>link-nav</h2>
+				</li>
+				<li title="location">
+					<div class="icon-box">
+
+						<!-- location -->
+						<img src="../icons/icons.svg#location" class="svg-location-dims" alt="location"/>
+
+					</div>
+					<h2>location</h2>
+				</li>
+				<li title="main-nav__icon_1">
+					<div class="icon-box">
+
+						<!-- main-nav__icon_1 -->
+						<img src="../icons/icons.svg#main-nav__icon_1" class="svg-main-nav__icon_1-dims" alt="main-nav__icon_1"/>
+
+					</div>
+					<h2>main-nav__icon_1</h2>
+				</li>
+				<li title="main-nav__icon_2">
+					<div class="icon-box">
+
+						<!-- main-nav__icon_2 -->
+						<img src="../icons/icons.svg#main-nav__icon_2" class="svg-main-nav__icon_2-dims" alt="main-nav__icon_2"/>
+
+					</div>
+					<h2>main-nav__icon_2</h2>
+				</li>
+				<li title="main-nav__icon_3">
+					<div class="icon-box">
+
+						<!-- main-nav__icon_3 -->
+						<img src="../icons/icons.svg#main-nav__icon_3" class="svg-main-nav__icon_3-dims" alt="main-nav__icon_3"/>
+
+					</div>
+					<h2>main-nav__icon_3</h2>
+				</li>
+				<li title="main-nav__icon_4">
+					<div class="icon-box">
+
+						<!-- main-nav__icon_4 -->
+						<img src="../icons/icons.svg#main-nav__icon_4" class="svg-main-nav__icon_4-dims" alt="main-nav__icon_4"/>
+
+					</div>
+					<h2>main-nav__icon_4</h2>
+				</li>
+				<li title="main-nav__icon_5">
+					<div class="icon-box">
+
+						<!-- main-nav__icon_5 -->
+						<img src="../icons/icons.svg#main-nav__icon_5" class="svg-main-nav__icon_5-dims" alt="main-nav__icon_5"/>
+
+					</div>
+					<h2>main-nav__icon_5</h2>
+				</li>
+				<li title="main-nav__icon_6">
+					<div class="icon-box">
+
+						<!-- main-nav__icon_6 -->
+						<img src="../icons/icons.svg#main-nav__icon_6" class="svg-main-nav__icon_6-dims" alt="main-nav__icon_6"/>
+
+					</div>
+					<h2>main-nav__icon_6</h2>
+				</li>
+				<li title="main-nav__icon_7">
+					<div class="icon-box">
+
+						<!-- main-nav__icon_7 -->
+						<img src="../icons/icons.svg#main-nav__icon_7" class="svg-main-nav__icon_7-dims" alt="main-nav__icon_7"/>
+
+					</div>
+					<h2>main-nav__icon_7</h2>
+				</li>
+				<li title="new">
+					<div class="icon-box">
+
+						<!-- new -->
+						<img src="../icons/icons.svg#new" class="svg-new-dims" alt="new"/>
+
+					</div>
+					<h2>new</h2>
+				</li>
+				<li title="providers">
+					<div class="icon-box">
+
+						<!-- providers -->
+						<img src="../icons/icons.svg#providers" class="svg-providers-dims" alt="providers"/>
+
+					</div>
+					<h2>providers</h2>
+				</li>
+				<li title="rating">
+					<div class="icon-box">
+
+						<!-- rating -->
+						<img src="../icons/icons.svg#rating" class="svg-rating-dims" alt="rating"/>
+
+					</div>
+					<h2>rating</h2>
+				</li>
+				<li title="search">
+					<div class="icon-box">
+
+						<!-- search -->
+						<img src="../icons/icons.svg#search" class="svg-search-dims" alt="search"/>
+
+					</div>
+					<h2>search</h2>
+				</li>
+				<li title="select">
+					<div class="icon-box">
+
+						<!-- select -->
+						<img src="../icons/icons.svg#select" class="svg-select-dims" alt="select"/>
+
+					</div>
+					<h2>select</h2>
+				</li>
+				<li title="show-more">
+					<div class="icon-box">
+
+						<!-- show-more -->
+						<img src="../icons/icons.svg#show-more" class="svg-show-more-dims" alt="show-more"/>
+
+					</div>
+					<h2>show-more</h2>
+				</li>
+				<li title="slot_close">
+					<div class="icon-box">
+
+						<!-- slot_close -->
+						<img src="../icons/icons.svg#slot_close" class="svg-slot_close-dims" alt="slot_close"/>
+
+					</div>
+					<h2>slot_close</h2>
+				</li>
+				<li title="slot_screen">
+					<div class="icon-box">
+
+						<!-- slot_screen -->
+						<img src="../icons/icons.svg#slot_screen" class="svg-slot_screen-dims" alt="slot_screen"/>
+
+					</div>
+					<h2>slot_screen</h2>
+				</li>
+				<li title="slot_search">
+					<div class="icon-box">
+
+						<!-- slot_search -->
+						<img src="../icons/icons.svg#slot_search" class="svg-slot_search-dims" alt="slot_search"/>
+
+					</div>
+					<h2>slot_search</h2>
+				</li>
+				<li title="slot_time">
+					<div class="icon-box">
+
+						<!-- slot_time -->
+						<img src="../icons/icons.svg#slot_time" class="svg-slot_time-dims" alt="slot_time"/>
+
+					</div>
+					<h2>slot_time</h2>
+				</li>
+				<li title="user">
+					<div class="icon-box">
+
+						<!-- user -->
+						<img src="../icons/icons.svg#user" class="svg-user-dims" alt="user"/>
+
+					</div>
+					<h2>user</h2>
+				</li>
+				<li title="user-nav">
+					<div class="icon-box">
+
+						<!-- user-nav -->
+						<img src="../icons/icons.svg#user-nav" class="svg-user-nav-dims" alt="user-nav"/>
+
+					</div>
+					<h2>user-nav</h2>
+				</li>
+				<li title="user-profile">
+					<div class="icon-box">
+
+						<!-- user-profile -->
+						<img src="../icons/icons.svg#user-profile" class="svg-user-profile-dims" alt="user-profile"/>
+
+					</div>
+					<h2>user-profile</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Thu, 17 Dec 2020 13:37:52 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,252 @@
+body {
+    background: $c_main;
+    & .main_profile {
+        background-color: $c_profile_bg_main;
+        display: flex;
+    }
+}
+
+.main {
+    flex: 1 0 auto;
+}
+
+.bottom {
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+    max-width: 100%;
+
+    @media (min-width: $md4) {
+        padding-left: calc(50% - #{$cmd4} / 2) !important;
+        padding-right: calc(50% - #{$cmd4} / 2) !important;
+    }
+
+    @media (min-width: $md3) {
+        padding-left: calc(50% - #{$cmd3} / 2) !important;
+        padding-right: calc(50% - #{$cmd3} / 2) !important;
+    }
+
+    @media (min-width: $md2) {
+        padding-left: calc(50% - #{$cmd2} / 2) !important;
+        padding-right: calc(50% - #{$cmd2} / 2) !important;
+    }
+
+    @media (min-width: $md1) {
+        padding-left: calc(50% - #{$cmd1} / 2) !important;
+        padding-right: calc(50% - #{$cmd1} / 2) !important;
+    }
+
+
+
+}
+
+// GRID
+.col {
+    flex: 1 1 0%;
+    max-width: 100%;
+}
+
+.col-auto {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+}
+
+@include columns('.col-', 12, 1);
+
+
+// Grid large
+@media all and (max-width:$md1) {
+    .col-lg {
+        flex: 1 1 0%;
+        max-width: 100%;
+    }
+
+    .col-lg-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%
+    }
+
+    @include columns('.col-lg-', 12, 1);
+}
+
+// Grid large
+
+// Grid medium
+@media all and (max-width:$md2) {
+    .col-md {
+        flex: 1 1 0%;
+        max-width: 100%;
+    }
+
+    .col-md-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%
+    }
+
+    @include columns('.col-md-', 12, 1);
+}
+
+// Grid medium
+
+// Grid small
+@media all and (max-width:$md3) {
+    .col-sm {
+        flex: 1 1 0%;
+        max-width: 100%;
+    }
+
+    .col-sm-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%
+    }
+
+    @include columns('.col-sm-', 12, 1);
+}
+
+// Grid small
+
+// GRID
+
+
+// DISPALY
+.d-none {
+    display: none !important
+}
+
+.d-block {
+    display: block !important
+}
+
+.d-flex {
+    display: flex !important
+}
+
+.d-inline-flex {
+    display: inline-flex !important
+}
+
+@media all and (max-width:$md1) {
+    .d-lg-none {
+        display: none !important
+    }
+
+    .d-lg-block {
+        display: block !important
+    }
+
+    .d-lg-flex {
+        display: flex !important
+    }
+
+    .d-lg-inline-flex {
+        display: inline-flex !important
+    }
+}
+
+@media all and (max-width:$md2) {
+    .d-md-none {
+        display: none !important
+    }
+
+    .d-md-block {
+        display: block !important
+    }
+
+    .d-md-flex {
+        display: flex !important
+    }
+
+    .d-md-inline-flex {
+        display: inline-flex !important
+    }
+}
+
+@media all and (max-width:$md3) {
+    .d-sm-none {
+        display: none !important
+    }
+
+    .d-sm-block {
+        display: block !important
+    }
+
+    .d-sm-flex {
+        display: flex !important
+    }
+
+    .d-sm-inline-flex {
+        display: inline-flex !important
+    }
+}
+
+// DISPALY
+
+
+// SPACING
+
+// Padding
+@include spacing('.p-', 'padding', 48, 4);
+
+@media all and (max-width:$md1) {
+    @include spacing('.p-lg-', 'padding', 48, 4);
+}
+
+@media all and (max-width:$md2) {
+    @include spacing('.p-md-', 'padding', 48, 4);
+}
+
+@media all and (max-width:$md3) {
+    @include spacing('.p-sm-', 'padding', 48, 4);
+}
+
+// Padding
+
+
+// Margin bottom
+@include spacing('.mb-', 'margin-bottom', 48, 4);
+
+@media all and (max-width:$md1) {
+    @include spacing('.mb-lg-', 'margin-bottom', 48, 4);
+}
+
+@media all and (max-width:$md2) {
+    @include spacing('.mb-md-', 'margin-bottom', 48, 4);
+}
+
+@media all and (max-width:$md3) {
+    @include spacing('.mb-sm-', 'margin-bottom', 48, 4);
+}
+
+// Margin bottom
+
+// Margin right
+@include spacing('.mr-', 'margin-right', 48, 4);
+
+@media all and (max-width:$md1) {
+    @include spacing('.mr-lg-', 'margin-right', 48, 4);
+}
+
+@media all and (max-width:$md2) {
+    @include spacing('.mr-md-', 'margin-right', 48, 4);
+}
+
+@media all and (max-width:$md3) {
+    @include spacing('.mr-sm-', 'margin-right', 48, 4);
+}
+
+// Margin right
+// SPACING

@@ -1,0 +1,65 @@
+.scoreboard {
+    overflow: hidden;
+
+    &.scoreboard_navbar {
+        position: fixed;
+        width: 100vw;
+        z-index: 1001;
+
+        &.scoreboard_navbar-toggle {
+            background-color: darken($c_main_dark, 3%);
+        }
+    }
+
+    height: 40px;
+    background-color: rgba(#000000, .5);
+    @extend %flex_align;
+
+    .scoreboard__cation {
+        @extend %flex_align;
+        padding: 16px;
+    }
+
+    .scoreboard__icon {
+        img {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+        }
+    }
+
+    .scoreboard__title {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 16px;
+    }
+
+
+    .scoreboard__item {
+        display: flex;
+        padding: 16px;
+    }
+
+    .scoreboard__user {
+        opacity: 0.56;
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 16px;
+    }
+
+    .scoreboard__game {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 16px;
+    }
+
+    &.scoreboard__toggle {
+        background-color: $c_main_dark;
+    }
+}

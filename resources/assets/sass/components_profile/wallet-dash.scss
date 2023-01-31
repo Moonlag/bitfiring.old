@@ -1,0 +1,34 @@
+.wallet-dash {
+    border-radius: 8px;
+    background-color: $c_profile_bg_secondary;
+
+    .wallet-dash__aside {
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        width: 335px;
+
+        @media all and (max-width:$md2) {
+            width: 228px;
+        }
+
+        @media all and (max-width:$md3) {
+            @include flex(1);
+        }
+    }
+
+    .wallet-dash__block {
+        padding: 24px;
+
+        &.wallet-dash__block_brodered {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+        }
+
+        @media all and (max-width:$md2) {
+            padding: 16px;
+        }
+
+        @media all and (max-width:$md3) {
+            padding: 16px 0;
+        }
+    }
+}

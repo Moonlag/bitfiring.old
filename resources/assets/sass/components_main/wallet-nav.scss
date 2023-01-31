@@ -1,0 +1,102 @@
+.wallet-nav {
+    @extend %flex_align;
+    cursor: pointer;
+    margin-left: 8px;
+
+    &:hover{
+        svg{
+            fill: $c_gold;
+        }
+    }
+
+    .wallet-nav__img {
+        margin-right: 10px;
+    }
+
+    .wallet-nav__title {
+        color: $c_gold;
+        font-family: $fnt_main;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        text-align: left;
+        text-transform: uppercase;
+
+        @media all and (max-width:$md3) {
+            display: none;
+        }
+    }
+
+    .wallet-nav__angle {
+        margin-right: 20px;
+
+        img {
+            width: 10px;
+            height: auto;
+        }
+
+        @media all and (max-width:$md3) {
+            display: none;
+            margin-right: 0;
+        }
+    }
+
+    .wallet_dropdown {
+        background: linear-gradient(99.8deg, rgba(196, 47, 237, 0.5) 14.73%, rgba(99, 158, 255, 0.5) 88.93%);
+        /* Note: backdrop-filter has minimal browser support */
+
+        width: 100%;
+        padding: 12px 18px 12px 12px;
+
+        &:first-child{
+            border-radius: 8px 8px 0 0;
+        }
+
+        &:not(:last-child){
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        &:last-child{
+            border-radius: 0 0 8px 8px;
+        }
+
+        &.active {
+            background-color: #7859F1;
+        }
+
+        .wallet_dropdown_header {
+            @extend %flex_align;
+        }
+
+        .wallet_dropdown__icon {
+            margin-right: 12px;
+            background: rgba(255, 255, 255, 0.15);;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            @extend %flex_center;
+            img {
+                width: 25px;
+                height: auto;
+            }
+        }
+
+        .wallet_dropdown__title {
+            color: $c_text_primary;
+            font-family: $fnt_main;
+            font-size: 16px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: 1.5;
+            text-align: left;
+            font-weight: 500;
+
+            span {
+                font-weight: 500;
+                font-family: $fnt_main;
+
+            }
+        }
+    }
+
+}

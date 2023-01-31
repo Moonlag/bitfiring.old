@@ -1,0 +1,38 @@
+// BREADCRUMP
+// =========================================================
+.breadcrump {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    li a {
+        display: flex;
+        padding: 15px 30px;
+        position: relative;
+        color: #51656b;
+        font-family: $fnt_main;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+    }
+
+    li:not(:last-child) a {
+        border-right: 2px solid rgb(246, 247, 249);
+    }
+
+
+    li:last-child a {
+        pointer-events: none;
+    }
+}
+
+// =========================================================
+// BREADCRUMP

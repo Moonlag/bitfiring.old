@@ -1,0 +1,24 @@
+.mark-dot {
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    align-self: center;
+    margin-right: 8px;
+    border-radius: 50%;
+
+    &.mark-dot_success {
+        background-color: $c_success;
+    }
+
+    &.mark-dot_error {
+        background-color: $c_error;
+    }
+
+    &.mark-dot_alert {
+        background-color: $c_profile_main;
+    }
+
+    &.mark-dot_warning {
+        background-color: #caa502;
+    }
+}

@@ -1,0 +1,36 @@
+// PLASEHOLDERS
+// ====================================================================
+
+%flex_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%flex_align {
+    display: flex;
+    align-items: center;
+}
+
+%ellipsis {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+%wrapper {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: nowrap;
+}
+
+%mx_auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// ====================================================================
+// PLASEHOLDERS

@@ -1,0 +1,101 @@
+.bank-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -8px;
+
+    .bank-cards__item {
+        @include flex(2);
+        padding: 8px;
+
+        @media all and (max-width: $md2) {
+            max-width: 100%
+        }
+
+        @media all and (max-width: $md3) {
+            @include flex(2);
+        }
+    }
+
+    @media all and (max-width: $md2) {
+        flex-direction: column;
+    }
+
+    @media all and (max-width: $md3) {
+        flex-direction: row;
+    }
+}
+
+.bank-card {
+
+    .bank-card__inner {
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        background-color: $c_text_primary;
+        height: 126px;
+        padding: 18px 12px;
+        cursor: pointer;
+    }
+
+    .bank-card__img {
+        position: relative;
+        height: 56px;
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .bank-card__title {
+        color: #7859F1;
+        font-family: $fnt_main;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: normal;
+        text-align: center;
+        margin-top: 5px;
+
+        @media all and (max-width: $md2) {
+            font-size: 14px;
+        }
+
+        @media all and (max-width: $md3) {
+            font-size: 14px;
+        }
+    }
+
+    &.bank-card_active {
+        .bank-card__inner {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 0 0 2px #ff8700;
+            @media all and (max-width: $md3) {
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 0 0 4px #ff8700;
+            }
+        }
+    }
+
+    &.bank-card_disabled {
+        .bank-card__inner {
+            position: relative;
+            cursor: default;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 4px;
+                background-color: $c_profile_bg_uplayer;
+                opacity: 0.5;
+                z-index: 5;
+                display: block;
+            }
+        }
+    }
+}

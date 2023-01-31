@@ -1,0 +1,45 @@
+.winner-tabs {
+
+    .winner-tabs__heads {
+        margin-bottom: 32px;
+        @extend %flex_center;
+
+        @media all and (max-width:$md1) {
+            display: none;
+        }
+    }
+
+    .winner-tabs__head {
+        position: relative;
+        padding: 12px 16px;
+        color: #a6abb2;
+        font-family: $fnt_main;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+            transition: .3s;
+            stroke: rgba(255, 255, 255, 0.2);
+        }
+
+        &.tab__active {
+            color: $c_text_primary;
+            font-family: $fnt_main;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+
+            svg {
+                stroke: url(#paint0_linear);
+            }
+        }
+    }
+
+}

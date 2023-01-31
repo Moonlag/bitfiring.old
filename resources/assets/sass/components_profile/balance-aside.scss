@@ -1,0 +1,75 @@
+.balance-aside {
+
+
+    .balance-aside__current {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1.25;
+    }
+
+    .balance-aside__text {
+        font-family: $fnt_main;
+        font-weight: 500;
+        font-style: normal;
+
+        font-size: 13px;
+        line-height: 20px;
+        /* identical to box height, or 154% */
+
+        letter-spacing: -0.01em;
+
+        /* secondary / purple */
+
+        color: #AA99CC;
+    }
+
+    .balance-aside__row {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+
+    .balance-aside__group{
+       .balance-aside__item:not(:last-child){
+           margin-bottom: 8px;
+       }
+    }
+
+    .balance-aside__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .balance-aside__title {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: normal;
+        display: flex;
+        flex-direction: column;
+        span {
+            text-align: center;
+        }
+    }
+
+    .balance-aside__title_lg {
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    .balance-aside__btn {
+        width: 100%;
+    }
+}

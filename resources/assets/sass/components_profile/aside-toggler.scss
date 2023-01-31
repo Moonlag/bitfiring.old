@@ -1,0 +1,72 @@
+.aside-toggler {
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 20px;
+    height: 13px;
+
+    span {
+        height: 2px;
+        width: 100%;
+        background-color: $c_text_primary;
+        display: block;
+        transition: .5s;
+        position: absolute;
+        transform-origin: center center;
+
+        &:first-child {
+            top: 0;
+            left: 0;
+        }
+
+        &:last-child {
+            bottom: 0;
+            left: 0;
+        }
+
+        &.aside-toggler__middle {
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+
+            &::before {
+                content: '';
+                width: calc(20 / 35 * 100%);
+                background-color: $c_text_primary;
+            }
+
+            &::after {
+                content: '';
+                width: calc(15 / 35 * 100%);
+                background-color: $c_text_primary;
+                transition: .3s;
+            }
+        }
+    }
+
+    &.aside-toggler__toggle {
+        span:first-child {
+            transform: rotate(135deg) translate(0%, 50%);
+            top: 50%;
+            left: 0;
+        }
+
+        span:last-child {
+            transform: rotate(45deg) translate(0%, 50%);
+            bottom: 50%;
+            left: 0%;
+        }
+
+        .aside-toggler__middle {
+            transform: translate(25px, 0%);
+            opacity: 0;
+
+            &::after {
+                transform: translate(20px, 0);
+            }
+        }
+    }
+}

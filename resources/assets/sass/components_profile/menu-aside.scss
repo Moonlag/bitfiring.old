@@ -1,0 +1,12 @@
+.menu-aside {
+    li a {
+        display: flex;
+        padding: 14px 26px;
+
+        &:hover {
+            background-color: #1a0d33;
+        }
+    }
+
+    .menu-aside__icon {}
+}

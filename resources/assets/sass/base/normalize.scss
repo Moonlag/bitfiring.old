@@ -1,0 +1,164 @@
+// NORMALIZE
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none !important;
+    list-style: none;
+    // cursor: url('../img/cursor/select.svg'), auto;
+    font-family: $fnt_main;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+html,
+body {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 100%;
+    position: relative;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+a,
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    appearance: button;
+}
+
+textarea {
+    resize: none !important;
+    overflow: auto;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+}
+
+img {
+    display: block;
+}
+iframe {
+    border: 0;
+}
+
+.main-app {
+    display: block;
+    height: 100%;
+    min-height: 100vh;
+    .main_profile {
+        min-height: 100vh;
+        height: 100%;
+    }
+}
+
+.mb-10{
+    margin-bottom: 10px;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+.mb-25{
+    margin-bottom: 25px;
+}
+.mb-30{
+    margin-bottom: 30px;
+}
+.mb-40{
+    margin-bottom: 40px;
+}
+.mb-50{
+    margin-bottom: 50px;
+}
+
+.col-35 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 calc(100% / 12 * 3.5);
+    flex: 0 1 calc(100% / 12 * 4);
+    max-width: calc(100% / 12 * 3.75);
+    margin-left: 12px;
+}
+
+html.css-element .virt-backdrop-wrap {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index:-1;
+    pointer-events: none;
+    overflow: hidden;
+}
+html.css-element .virt-backdrop {
+    content: '';
+    position: absolute;
+    display: block;
+    top: calc(var(--blurSize) * -1);
+    left: calc(var(--blurSize) * -1);
+    right: calc(var(--blurSize) * -1);
+    bottom: calc(var(--blurSize) * -1);
+    filter: blur(var(--blurSize));
+    background-image: element(#wrap);
+    background-color: rgba(0,0,0,0.2);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    will-change: transform;
+    transition: none !important;
+}
+
+// NORMALIZE

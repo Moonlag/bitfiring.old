@@ -1,0 +1,176 @@
+.bonus-card {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+
+    @media all and (max-width:$md3) {
+        flex-direction: column;
+        max-height: none;
+    }
+
+    .bonus-card__img {
+        height: auto;
+        width: 100%;
+        max-width: 552px;
+        border-radius: 8px 0 0 8px;
+        overflow: hidden;
+
+        @media all and (max-width:$md1) {
+            max-width: 452px;
+        }
+
+        @media all and (max-width:$md2) {
+            max-width: 232px;
+        }
+
+        @media all and (max-width:$md3) {
+            max-width: 100%;
+        }
+
+        .ratio__box{
+            height: 100%;
+            width: 100%;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .bonus-card__description {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1 1 0%;
+        @media all and (max-width:$md2) {
+            padding: 16px;
+        }
+
+        @media all and (max-width:$md3) {
+            flex-direction: column;
+            border-radius: 0 0 8px 8px;
+        }
+    }
+
+    .bonus-card__title {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32px;
+        margin-bottom: 16px;
+    }
+
+    .bonus-card__text {
+        height: calc(24px * 3); /* не стал писать 75px, чтобы показать, что максимум по высоте на 3 строки выделяю блок */
+
+        overflow: hidden;
+        text-align: justify;
+
+        /* а вот это как раз и дает результат "..." в многострочном тексте */
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+
+        color: #a6abb2;
+        font-family: $fnt_main;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        margin-bottom: 22px;
+        flex: 1;
+
+        @media all and (max-width:$md3) {
+            height: auto;
+            display: inline-block;
+        }
+    }
+
+    .bonus-card__link {
+        opacity: 0.5;
+        color: #a6abb2;
+        font-family: $fnt_main;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: left;
+        text-decoration: underline;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .bonus-card__dash {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 24px;
+
+        @media all and (max-width:$md2) {
+            margin-top: 16px;
+        }
+    }
+
+    .btn {
+        @media all and (max-width:$md3) {
+            width: 100%;
+            order: 2;
+        }
+    }
+
+    .btn-transparent {
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    .bonus-card__code_wrapper{
+        position: relative;
+        z-index: 1;
+
+        @media all and (max-width:$md3) {
+            width: 100%;
+        }
+    }
+
+    .bonus-card__code {
+        position: relative;
+        border-radius: 3px;
+        margin-left: 16px;
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 16px;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 1.5;
+        text-align: left;
+        @extend %flex_center;
+        min-height: 48px;
+        padding: 14px 20px;
+        background: #09051D;
+        border: 2px solid transparent;
+        background-clip: padding-box;
+
+        &::after{
+            position: absolute;
+            top: -2px;
+            bottom: -2px;
+            left: -2px;
+            right: -2px;
+            background: $c_main_gradient;
+            content: '';
+            z-index: -2;
+            border-radius: 3px;
+        }
+
+        @media all and (max-width:$md3) {
+            order: 1;
+            margin-left: 0;
+            margin-bottom: 8px;
+            width: 100%;
+        }
+    }
+}

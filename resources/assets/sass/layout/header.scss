@@ -1,0 +1,204 @@
+// BOARD
+// =========================================================
+.header {
+    position: relative;
+    padding: 168px 0 64px;
+    &__home{
+        padding: 168px 0 56px;
+        display: flex;
+        justify-content: center;
+        @media all and (max-width:$md3) {
+            justify-content: center;
+        }
+    }
+
+    @media all and (max-width:$md1) {
+        padding: 157px 0 48px;
+    }
+
+    @media all and (max-width:$md2) {
+        padding: 135px 0 40px;
+    }
+
+    @media all and (max-width:$md3) {
+        padding: 88px 16px 0 16px;
+    }
+
+    .header__picture {
+        position: relative;
+        z-index: 2;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            // background-color: $c_text_primary;
+            background-color: rgba(rgb(1, 133, 156), .2);
+
+            z-index: -2;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 0;
+            padding-bottom: 80%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 50%;
+            background-color: rgba(rgb(1, 133, 156), .2);
+            z-index: -1;
+        }
+
+        @media all and (max-width:$md3) {
+            display: none;
+        }
+    }
+
+    .header__caption {
+        flex-direction: column;
+        text-align: center;
+        @media all and (max-width:$md3) {
+            display: flex;
+            align-items: center;
+        }
+
+        &.header__caption_bm {
+            @media all and (min-width:$md1) {
+                padding-bottom: 80px;
+            }
+        }
+
+    }
+
+    .header__title {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 48px;
+        line-height: 56px;
+        margin-bottom: 24px;
+        text-transform: uppercase;
+        @extend %flex_align;
+
+        &.header__title_left {
+            text-align: left;
+            justify-content: flex-start;
+            @media all and (max-width:$md3) {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        @media all and (max-width:$md2) {
+            font-size: 40px;
+        }
+
+        @media all and (max-width:$md3) {
+            margin-bottom: 10px;
+            font-size: 28px;
+            line-height: 40px;
+            text-align: center;
+        }
+    }
+
+    .header__text-sm {
+        color: #a6abb2;
+        font-family: $fnt_main;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 24px;
+
+        &.header__text-sm_left {
+            text-align-last: left;
+        }
+    }
+
+    .header__icon {
+        width: 56px;
+        height: 56px;
+        margin-right: 23px;
+
+        @media all and (max-width:$md3) {
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
+        }
+    }
+
+    .header__subtitle {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 32px;
+        margin-bottom: 32px;
+
+        span {
+            font-family: $fnt_main;
+            color: #DC5DFF;
+            font-weight: 500;
+        }
+        @media all and (max-width:$md3) {
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: 14px;
+        }
+    }
+
+    .header__btn {
+        margin-top: 32px;
+    }
+
+
+    .header__404-icon {
+        width: 96px;
+        height: auto;
+        margin-bottom: 36px;
+    }
+}
+
+.not-found, .maintenance{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+
+    .header{
+        padding: 0;
+    }
+}
+
+.maintenance{
+    flex-direction: column;
+
+    .navbar__logo{
+        margin-bottom: 5%;
+    }
+    .maintenance-logo{
+        width: 245px;
+        height: 245px;
+        margin-bottom: 5%;
+    }
+
+    .header__caption{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+
+
+// =============================================================
+// BOARD

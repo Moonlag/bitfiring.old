@@ -1,0 +1,42 @@
+{
+    "name": "Bitfiring™ ❤️ Top Bitcoin Crypto Casino",
+    "short_name": "Bitfiring™ ❤️ Top Bitcoin Crypto Casino",
+    "icons": [
+        {
+            "src": "/assets/favicon/android-chrome-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "density": "1"
+        },
+        {
+            "src": "/assets/favicon/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "density": "1.50"
+        },
+        {
+            "src": "/assets/favicon/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png",
+            "density": "0.50"
+        },
+        {
+            "src": "/assets/favicon/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png",
+            "density": "0.75"
+        }
+    ],
+    "start_url": "/",
+    "scope": ".",
+    "display": "standalone",
+    "background_color": "#642afb",
+    "theme_color": "#642afb",
+    "description": "At Bitfiring bitcoin crypto casino, you can play completely anonymously, from any country around the world. Here you can win bitcoins and other crypto’s without spending your own.",
+    "lang": "en-US"
+}

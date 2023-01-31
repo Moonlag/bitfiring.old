@@ -1,0 +1,131 @@
+@import "fonts";
+// FONTS
+@import "abstracts/abstracts";
+
+//@import "../../../node_modules/bootstrap/scss/functions";
+//@import "../../../node_modules/bootstrap/scss/bootstrap-grid";
+//@import "../../../node_modules/bootstrap/scss/bootstrap-reboot";
+
+// BASE
+@import "base/variables";
+@import "base/mixins";
+@import "base/normalize";
+@import "base/helpers";
+@import "base/grid";
+@import "base/placeholders";
+@import "base/typography";
+// BASE
+
+// MODULES
+@import "modules/ui";
+@import "modules/forms";
+@import "modules/sliders";
+@import "modules/text-block";
+@import "modules/fancybox";
+// MODULES
+
+
+// LAYOUT
+@import "layout/navbar";
+@import "layout/header";
+@import "layout/breadcrump";
+@import "layout/popups";
+@import "layout/gotop";
+@import "layout/footer";
+@import "layout/bubble.scss";
+// LAYOUT
+
+
+// VENDORS
+@import "vendors/nice-select";
+// @import "./vendors/choises/base.sass";
+@import "vendors/choises/choices";
+
+// VENDORS
+
+
+// COMPONENTS MAIN
+@import "components_main/btn";
+@import "components_main/games-grid";
+@import "components_main/top-bg";
+@import "components_main/game-preview";
+@import "components_main/popular-slider";
+@import "components_main/show-more";
+@import "components_main/home-nav";
+@import "components_main/home-tab";
+@import "components_main/home-categories";
+@import "components_main/brands";
+@import "components_main/footer-nav";
+@import "components_main/language";
+@import "components_main/provider-card";
+@import "components_main/link-nav";
+@import "components_main/user-nav";
+@import "components_main/winner-preview";
+@import "components_main/winner-tabs";
+@import "components_main/tournament-expire";
+@import "components_main/tournament-preview";
+@import "components_main/tournament-prize";
+@import "components_main/header-img";
+@import "components_main/tournament-description";
+@import "components_main/tournament-gift";
+@import "components_main/tournament-gifts";
+@import "components_main/leadership-board";
+@import "components_main/bonus-card";
+@import "components_main/bonuses";
+@import "components_main/payment";
+@import "components_main/page-404";
+@import "components_main/slot";
+@import "components_main/search-slot";
+@import "components_main/notification-nav";
+@import "components_main/notification";
+@import "components_main/wallet-nav";
+@import "components_main/coockies";
+@import "components_main/top-game";
+@import "components_main/search-prov";
+@import "components_main/scoreboard";
+@import "components_main/all-providers";
+
+// COMPONENTS MAIN
+
+// COMPONENTS PROFILE
+@import "components_profile/link-aside";
+@import "components_profile/balance-aside";
+@import "components_profile/profile-main";
+@import "components_profile/profile-card";
+@import "components_profile/progress-profile";
+@import "components_profile/profile-block";
+@import "components_profile/form-line";
+@import "components_profile/profile-table";
+@import "components_profile/table-filter";
+@import "components_profile/profile-tabs";
+@import "components_profile/title-label";
+@import "components_profile/drop-file";
+@import "components_profile/wallet-dash";
+@import "components_profile/bank-card";
+@import "components_profile/wallet-ballance";
+@import "components_profile/wallet-info";
+@import "components_profile/wallet-form";
+@import "components_profile/mark-dot";
+@import "components_profile/aside-toggler";
+@import "components_profile/profile-aside";
+
+// COMPONENTS PROFILE
+
+.partner__grid{
+  display: grid;
+  grid-gap: 16px;
+  overflow: hidden;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  a{
+    max-height: 150px;
+    height: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,134 @@
+.leadership-board {
+
+    &.leadership-board_mb {
+        margin-bottom: size(64, 32);
+    }
+
+    .leadership-board__title {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 1.33;
+
+        margin-bottom: 32px;
+
+        @media all and (max-width:$md1) {
+            margin: 23px;
+        }
+
+        @media all and (max-width:$md2) {
+            margin-bottom: 16px;
+        }
+    }
+
+    .leadership-board__table {
+        padding: 0 24px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+    }
+
+    .leadership-board__row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 23px 0;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media all and (max-width:$md3) {
+            display: block;
+        }
+    }
+
+    .leadership-board__head {
+
+        @media all and (max-width:$md3) {
+            display: none;
+        }
+    }
+
+    .leadership-board__col-counter {
+        margin-right: 32px;
+
+        @media all and (max-width:$md3) {
+            margin-right: 0;
+        }
+    }
+
+    .leadership-board__head-title {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+
+    .leadership-board__col-main {
+        flex: 1 1 0%;
+
+        @media all and (max-width:$md3) {
+            display: inline;
+        }
+    }
+
+    .leadership-board__col-secondary {
+        flex-basis: 175px;
+        @extend %flex_center;
+
+        @media all and (max-width:$md3) {
+            display: inline;
+        }
+    }
+
+    .leadership-board__price {
+        color: #a6abb2;
+        font-family: $fnt_main;
+        font-size: 16px;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 1.5;
+
+        @media all and (max-width:$md3) {
+            font-size: 16px;
+            line-height: 1.5;
+            color: $c_text_primary;
+            font-family: $fnt_main;
+            font-weight: 500;
+        }
+    }
+
+    .leadership-board__text_secondary {
+        color: #a6abb2;
+        font-family: $fnt_main;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+
+    .leadership-board__text_primary {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+
+    .leadership-board__time {
+        @media all and (max-width:$md3) {
+            display: block;
+            margin-top: 11px;
+        }
+    }
+
+    .leadership-board__text_hidden {
+        display: none;
+
+        @media all and (max-width:$md3) {
+            display: inline;
+        }
+    }
+
+}

@@ -1,0 +1,169 @@
+#popular_block{
+    overflow: hidden;
+    margin-bottom: 20px;
+    @media all and (max-width: $md3) {
+        margin-bottom: 0;
+    }
+}
+
+.popular-slider {
+    display: flex;
+    justify-content: space-between;
+
+    @media all and (max-width: $md3) {
+        margin: 0;
+    }
+
+    &.popular-slider_bottom {
+        // margin-bottom: 60px;
+    }
+
+    .popular-slider__item {
+        overflow-y: visible;
+        cursor: pointer;
+        padding: 2px 2px;
+        height: 204px;
+        position: relative;
+        width: 342px;
+        display: flex;
+        align-items: flex-end;
+        & img {
+            position: absolute;
+            display: block;
+            top: 0;
+            right: 4px;
+            width: auto;
+            height: 200px;
+        }
+        @media all and (max-width: $md3) {
+            padding: 0;
+        }
+
+        &:hover .popular-slider__inner:before{
+            animation: animate 5s linear infinite
+        }
+    }
+
+    .popular-slider__inner {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        height: 164px;
+        width: 342px;
+        &::before {
+            position: absolute;
+            top: -2px;
+            bottom: -2px;
+            left: -2px;
+            right: -2px;
+            background:  linear-gradient(
+                    99.8deg, #C42FED, #639EFF, #639EFF, #C42FED);
+            background-size: 300%;
+            content: '';
+            z-index: -1;
+            border-radius: 8px;
+        }
+
+        @keyframes animate{
+            0%{
+                background-position: 0%;
+            }
+            100%{
+                background-position: 300%;
+            }
+        }
+
+        &.popular-1{
+            background: linear-gradient(104.93deg, rgba(41, 9, 72, 0.7) 8.35%, rgba(80, 6, 92, 0.7) 93.42%), url('../img/popular-slider/popular-bg_1.webp');
+
+            background-size: cover;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            border-radius: 10px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                width: 25px;
+                height: 39px;
+                left: 127px;
+                top: 7px;
+                background-size: cover;
+            }
+        }
+
+        &.popular-2{
+            background: url('../img/popular-slider/popular-bg_2.webp');
+
+            background-size: cover;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            border-radius: 10px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                width: 44px;
+                height: 58px;
+                left: 155px;
+                top: 82px;
+                background-size: cover;
+            }
+        }
+
+        &.popular-3{
+            background: url('../img/popular-slider/popular-bg_3.webp') center;
+
+            background-size: cover;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            border-radius: 10px;
+        }
+
+        & .popular-slider__text{
+            @extend %flex_center;
+            width: 45%;
+            height: 100%;
+            padding-left: 23px;
+            & .popular-slider__title{
+                font-family: inherit;
+                font-style: normal;
+                font-weight: 900;
+                font-size: 24px;
+                line-height: 125%;
+
+                color: #FFFFFF;
+                text-transform: uppercase;
+
+                text-align: left;
+                text-shadow: 2px 2px 2px rgba(17, 2, 40, 0.75);
+            }
+        }
+
+    }
+}
+
+.popular-slider__dots {
+    @extend %flex_center;
+
+    ul {
+        display: flex;
+
+        li button {
+            font-size: 0;
+            line-height: 0;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #fff;
+            opacity: .3;
+            margin-right: 8px;
+        }
+
+        .slick-active {
+            button {
+                opacity: 1;
+            }
+        }
+    }
+}

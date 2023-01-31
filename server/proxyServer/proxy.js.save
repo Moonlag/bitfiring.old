@@ -1,0 +1,85 @@
+
+const httpServer = require("http").createServer();
+const express = require('express'),
+        http = require('https');
+const morgan = require("morgan");
+const { createProxyMiddleware, responseInterceptor } = require('http-proxy-middleware');
+const Redis = require("ioredis");
+const fs = require('fs');
+const redisClient = new Redis();
+const redisClientProxy = redisClient.duplicate();
+const util = require("util").inspect.defaultOptions.depth = null;
+const shell = require('shelljs');
+const cors = require('cors')
+const privateKey = fs.readFileSync('./../../../../../conf/web/bitfiring.com/ssl/bitfiring.com.key').toString();
+const certificate = fs.readFileSync('./../../../../../conf/web/bitfiring.com/ssl/bitfiring.com.crt').toString();
+
+const credentials = {key: privateKey, cert: certificate};
+
+const app = express();
+const server = http.createServer(credentials, app);
+
+const PORT = 3003;
+const HOST = "84.32.188.135";
+const API_SERVICE_URL = "https://run.evoplay.games/";
+
+(async () => {
+    const res = await redisClient.get(`urls`);
+    const urls = JSON.parse(res);
+
+
+// Logging
+    app.use(morgan('dev'));
+    app.use(cors());
+
+// Info GET endpoint
+    app.get('/info', (req, res, next) => {
+        res.send('This is a proxy service which proxies to Billing and Account APIs.');
+    });
+
+    const proxyWebp = createProxyMiddleware({
+        target: API_SERVICE_URL,
+    })
+
+    const proxy = createProxyMiddleware({
+        target: API_SERVICE_URL,
+        changeOrigin: true,
+        pathRewrite: {
+            '^/evo': '',
+        },
+        selfHandleResponse: true, // manually call res.end(); IMPORTANT: res.end() is called internally by responseInterceptor()
+        onProxyRes: responseInterceptor(async (buffer, proxyRes, req, res) => {
+            const imageTypes = ['text/html; charset=UTF-8'];
+            const exchange = `[DEBUG] ${req.method} ${req.path} -> ${proxyRes.req.protocol}//${proxyRes.req.host}${proxyRes.req.path} [${proxyRes.statusCode}]`;
+            res.setHeader('Access-Control-Allow-Origin', '*');
+            res.setHeader('Strict-Transport-Security', 'max-age=15768000; includeSubDomains');
+            // res.setHeader('Access-Control-Allow-Credentials: true');
+            // log original response
+            // console.log(`[DEBUG] original response:\n${buffer.toString('utf8')}`);
+            // set response content-type
+            // detect image responses
+            console.log(imageTypes.includes(proxyRes.headers['content-type']), proxyRes.headers['content-type'])
+            if (imageTypes.includes(proxyRes.headers['content-type'])) return buffer.toString('utf8').replace("https:\\/\\/run.evoplay.games", 'https:\\/\\/bitfiring.com:3003')
+            // set response status code
+            // return a complete different response
+            return buffer
+        }),
+    })
+// Proxy endpoints
+    app.use(['/', '/*.map', '/*.js', '/*.webp', '/*.json'], proxy);
+
+// Start the Proxy
+    server.listen(PORT, HOST, () => {
+        console.log(`Starting Proxy at ${HOST}:${PORT}`);
+    });
+    redisClientProxy.publish('start server', true)
+})();
+
+redisClient.subscribe('restart')
+redisClient.on('message', (channel, message) => {
+    if (channel === 'restart') {
+        shell.exec('pm2 restart 3');
+    }
+})
+
+

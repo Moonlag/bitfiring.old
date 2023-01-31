@@ -1,0 +1,14 @@
+{
+	"nav": {
+		"home": "Home",
+		"about": "About",
+		"user": "User"
+	},
+	"hello": "Hello, sunshine!",
+	"content": "This is content",
+	"user-slug": "User in URL is: ",
+	"pos": {
+		"info": "Branch info",
+		"manager": "Branch manager"
+	}
+}

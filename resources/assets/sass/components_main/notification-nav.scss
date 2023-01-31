@@ -1,0 +1,37 @@
+.notification-nav {
+    position: relative;
+
+    .notification-nav__icon {
+        width: 20px;
+        height: 20px;
+        fill: #fff;
+        cursor: pointer;
+    }
+
+    .notification-nav__counter {
+        position: absolute;
+        background-image: $c_main_gradient;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        top: -8px;
+        right: -8px;
+        @extend %flex_center;
+
+        color: #fff;
+        font-family: $fnt_main;
+        font-size: 8px;
+        font-weight: 500;
+        line-height: 1.25;
+    }
+
+    .notification__counter{
+        display: flex;
+        &:hover {
+            svg{
+                fill: $c_gold;
+            }
+
+        }
+    }
+}

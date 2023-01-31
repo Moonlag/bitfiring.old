@@ -1,0 +1,38 @@
+.search-slot {
+    padding: 9px 0;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: all 0.5s ease-in-out;
+    min-height: 44px;
+    input {
+        transition: all 0.5s ease-in-out;
+        font-family: $fnt_main;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: rgba(#fff, 0.7);
+        flex: 1 1 0%;
+        background-color: transparent;
+        display: none;
+    }
+
+    .search-slot__close {
+        margin-left: 14px;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        @media all and (max-width:$md1) {
+            display: none;
+        }
+    }
+
+    .search-slot__btn {
+        margin-right: 9px;
+
+        svg {
+            width: 14px;
+            height: 14px;
+            fill: #fff;
+        }
+    }
+}

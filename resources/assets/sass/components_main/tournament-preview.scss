@@ -1,0 +1,185 @@
+.tournament-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 3fr;
+    grid-gap: 16px;
+    margin-bottom: 64px;
+
+    @media all and (max-width:$md2) {
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+}
+
+.tournament-preview {
+    position: relative;
+    background: #09051D;
+    /* shadow */
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 30px rgba(196, 47, 237, 0.35);
+    background-clip: padding-box;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+
+    &::after{
+            position: absolute;
+            top: -1px;
+            bottom: -1px;
+            left: -1px;
+            right: -1px;
+            background: linear-gradient(
+                    99.8deg
+                , #C42FED 14.73%, #639EFF 88.93%);
+            content: '';
+            z-index: -1;
+            border-radius: 8px;
+    }
+
+    &:not(:last-child) {
+
+    }
+
+    &:last-child {
+
+    }
+
+    @media all and (max-width:$md1) {
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+
+        &:last-child {
+            margin-bottom: 48px;
+        }
+    }
+
+    @media all and (max-width:$md2) {
+        &:not(:last-child) {
+            margin-bottom: 32px;
+        }
+
+        &:last-child {
+            margin-bottom: 32px;
+        }
+    }
+
+    @media all and (max-width:$md2) {
+        flex-direction: row;
+        margin-bottom: 32px;
+    }
+
+    .tournament-preview_mb {}
+
+    .tournament-preview__thumbnail {
+        //@include flex(1122, 544);
+        height: 100%;
+        width: 100%;
+        max-height: 210px;
+        object-fit: cover;
+        border-radius: 8px 8px 0 0;
+        overflow: hidden;
+
+        @media all and (max-width:$md2) {
+            @include flex(2);
+            border-radius: 8px 0 0 8px;
+            max-height: 100%;
+        }
+
+        @media all and (max-width:$md3) {
+            height: auto;
+            border-radius: 8px 8px 0 0;
+            @include flex(1);
+        }
+    }
+
+    .tournament-preview__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        min-height: 224px;
+    }
+
+    .tournament-preview__caption {
+        padding: 24px;
+        flex: 1 1 0%;
+
+        @media all and (max-width:$md1) {
+            padding: 16px;
+        }
+
+        @media all and (max-width:$md3) {
+            padding: 16px;
+
+            @include flex(1);
+
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .tournament-preview__title {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 24px;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 1.33;
+        margin-bottom: 24px;
+
+        @media all and (max-width:$md3) {
+            font-size: 18px;
+        }
+    }
+
+    .tournament-preview__dash {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 38px;
+
+        @media all and (max-width:$md2) {
+            flex-direction: column;
+            margin-bottom: 0;
+            // align-items: center;
+        }
+
+        @media all and (max-width:$md3) {
+            flex-direction: column;
+            // align-items: center;
+        }
+    }
+
+    .tournament-preview__prize {
+        @media all and (max-width:$md2) {
+            @include flex(1);
+            margin-bottom: 20px;
+        }
+    }
+
+    .tournament-preview__btn {
+
+        @media all and (max-width:$md2) {
+            @include flex(1);
+            max-width: 100%;
+        }
+
+        @media all and (max-width:$md3) {
+            max-width: 100%;
+        }
+
+        @media all and (max-width:540px) {
+            max-width: 100%;
+
+            a {
+                width: 250px;
+            }
+        }
+
+    }
+
+    .tournament-preview__expire {
+        margin-bottom: 24px;
+    }
+}

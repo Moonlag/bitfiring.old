@@ -1,0 +1,40 @@
+.tournament-gifts {
+
+
+    &.tournament-gifts_mb {
+        margin-bottom: 64px;
+
+        @media all and (max-width:$md1) {
+            margin-bottom: 40px;
+        }
+
+        @media all and (max-width:$md3) {
+            margin-bottom: 32px;
+        }
+    }
+
+    .tournament-gifts__title {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 1.33;
+        margin-bottom: 14px;
+
+
+    }
+
+    .tournament-gifts__grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        @media all and (max-width:$md2) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media all and (max-width:$md3) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .tournament-gifts__item {}
+}

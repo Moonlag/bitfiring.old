@@ -1,0 +1,142 @@
+.profile-table {
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    .profile-table__head {
+        display: flex;
+
+        @media all and (max-width:$md3) {
+            display: none!important;
+        }
+    }
+
+    .profile-table__row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 24px 12px;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media all and (max-width:$md1) {
+            padding: 16px 8px;
+
+        }
+    }
+
+    .profile-table__item {
+        flex: 1 1 0%;
+        padding: 0 12px;
+        align-self: center;
+
+        @media all and (max-width:$md1) {
+            padding: 0 8px;
+        }
+
+        @media all and (max-width:$md3) {
+            @include flex(2);
+            margin-bottom: 16px;
+        }
+
+        &.profile-table__item_2x {
+            flex: 2 1 0%;
+
+            @media all and (max-width:$md3) {
+                @include flex(1);
+            }
+        }
+
+        &.profile-table__item_05x {
+            flex: .75 1 0%;
+        }
+
+        &.profile-table__item_01x {
+            flex: .15 1 0%;
+        }
+    }
+
+    .profile-table__title {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+
+        @media all and (max-width:$md3) {
+            margin-bottom: 4px;
+        }
+
+        &.profile-table__title_trans {
+            color: transparent;
+        }
+    }
+
+    .profile-table__text {
+        color: $c_profile_secondary;
+        font-family: $fnt_main;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        @extend %flex_align;
+    }
+
+    .profile-table__md {
+        display: none;
+
+        @media all and (max-width:$md3) {
+            display: block;
+            @include flex(1);
+        }
+    }
+
+    .profile-table__info {
+        img {
+            width: 13px;
+            height: auto;
+        }
+
+        &.profile-table__info_left {
+            margin-right: 13px;
+
+        }
+
+        &.profile-table__info_right {
+            margin-left: 13px;
+        }
+    }
+
+}
+
+.profile-table__pagination{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    border-radius: 8px;
+    color: #B18CE2;
+
+
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    @media all and (max-width:$md3) {
+        flex-direction: column;
+        padding: 0;
+        justify-content: center;
+    }
+
+    & .pagination{
+        padding: 0 77px;
+
+        @media all and (max-width:$md3) {
+            padding: 0;
+        }
+    }
+}
+@media all and (max-width:$md3) {
+    .chat-icon-profile{
+        bottom: 5.5rem!important;
+    }
+}
+

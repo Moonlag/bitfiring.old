@@ -1,0 +1,27 @@
+.wallet-ballance {
+    .wallet-ballance__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+
+    .wallet-ballance__text {
+        color: $c_profile_secondary;
+        font-family: $fnt_main;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+
+    .wallet-ballance__value {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.33;
+    }
+}

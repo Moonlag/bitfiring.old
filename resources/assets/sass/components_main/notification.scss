@@ -1,0 +1,64 @@
+.notification {
+    background: linear-gradient(99.8deg, rgba(196, 47, 237, 0.5) 14.73%, rgba(99, 158, 255, 0.5) 88.93%);
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 8px;
+    width: 240px;
+    padding: 12px;
+
+    .notification_header {
+        @extend %flex_align;
+        margin-bottom: 8px;
+    }
+
+    .notification__icon {
+        margin-right: 12px;
+        background: rgba(255, 255, 255, 0.15);;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        @extend %flex_center;
+    }
+
+    .notification__title {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 16px;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 1.5;
+        text-align: left;
+        font-weight: 500;
+
+        span {
+            font-weight: 500;
+            font-family: $fnt_main;
+
+        }
+    }
+
+    .notification__text {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 14px;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 1.71;
+        text-align: left;
+
+        span {
+            font-family: $fnt_main;
+            font-weight: 500;
+        }
+    }
+
+    .notification__btn {}
+
+    .btn {}
+
+    .btn_gradient {}
+
+    .btn_profile {}
+
+}

@@ -1,0 +1,14 @@
+{
+	"nav": {
+		"home": "Domů",
+		"about": "O nás",
+		"user": "Uživatel"
+	},
+	"hello": "Čus bejku!",
+	"content": "Tohle je obsah",
+	"user-slug": "Uživatel v URL je: ",
+	"pos": {
+		"info": "Informace o pobočce",
+		"manager": "Manažer pobočky"
+	}
+}

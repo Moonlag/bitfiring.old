@@ -1,0 +1,52 @@
+.link-aside {
+    @extend %flex_align;
+    padding: 12px 23px;
+    transition: .3s;
+
+    @media all and (max-width:$md3) {
+        padding: 12px 16px;
+        justify-content: center;
+    }
+
+    .link-aside__icon {
+        width: 24px;
+        height: auto;
+        opacity: 0.6;
+        fill: $c_profile_secondary;
+    }
+
+    .link-aside__text {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 18px;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 1.33;
+        padding-left: 14px;
+        display: inline-block;
+        @include ellipsis(1);
+
+        @media all and (max-width:$md1) {
+            position: relative;
+            margin-left: -300px;
+            opacity: 0;
+            transition: 1s, opacity .5s;
+        }
+
+        @media all and (max-width:$md3) {
+            display: none;
+        }
+    }
+
+    &:hover {
+        &:not(.link-aside_active){
+            background-color: #7859F1;
+        }
+    }
+
+    &.link-aside_active {
+        background: linear-gradient(99.8deg, #C42FED 14.73%, #639EFF 88.93%);
+        pointer-events: none;
+    }
+}

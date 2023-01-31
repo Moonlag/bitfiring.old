@@ -1,0 +1,39 @@
+.user-nav {
+    margin: 0 0 0 22px;
+    @extend %flex_align;
+    cursor: pointer;
+
+    @media all and (max-width:$md3) {
+        margin: 0 7px 0 7px;
+    }
+
+    .user-nav__icon {
+        margin-right: 10px;
+        width: 24px;
+        height: 24px;
+        fill: none;
+        stroke: white;
+        &.user-nav__icon_gold {
+            fill: $c_gold;
+        }
+    }
+
+    .user-nav__text {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        text-transform: uppercase;
+    }
+
+    &:hover {
+        .user-nav__icon {
+            stroke: $c_gold;
+        }
+
+        .user-nav__text {
+            color: $c_gold;
+        }
+    }
+}

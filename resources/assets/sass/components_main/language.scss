@@ -1,0 +1,58 @@
+.nice-select.language {
+    --font_size: 16px;
+    --input_border_radius: 5px;
+    --input_height: auto;
+    --option_height: 42px;
+    --dropdown_padding: 18px;
+    --main_text_color: #fff;
+    --option_color: #26134D;
+    --bg_main_color: transparent;
+    --bg_list_color: #fff;
+    --list_shadow: rgba(#444, 0.11);
+    --gray: #999;
+    --border_color: rgba(0, 0, 0, 0);
+    --border_hover: rgba(0, 0, 0, 0);
+    --border_focus: rgba(0, 0, 0, 0);
+    --option_hover: #f6f6f6;
+    --arrow_color: rgba(255, 255, 255, .3);
+}
+
+.lang {
+    @extend %flex_align;
+
+    .lang__icon {
+        width: 16px;
+        height: auto;
+        margin-right: 8px;
+    }
+
+    .lang__name {
+        color: $c_text_primary;
+        font-family: $fnt_main;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    .lang__angle {
+        margin-left: 8px;
+        width: 10px;
+        height: 6px;
+    }
+
+    .lang__body {
+        background-color: #fff;
+        padding: 12px 16px;
+        border-radius: 4px;
+        left: auto;
+        right: 0;
+
+        .lang__name {
+            color: #000;
+        }
+    }
+
+    .lang__item {
+        @extend %flex_align;
+    }
+}

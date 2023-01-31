@@ -1,0 +1,227 @@
+// SPACING
+@mixin spacing($className, $propertyName, $maxValue: 48, $step: 8, $unit: 'px') {
+	$i: 0;
+
+	@while $i <=$maxValue {
+		#{$className + $i} {
+			#{$propertyName}: #{$i + $unit} !important;
+		}
+
+		$i: $i+$step;
+	}
+}
+
+// SPACING
+
+
+// GRID COLUMNS
+@mixin columns($className, $maxValue: 12, $minValue:1, $step: 1) {
+	$i: $minValue;
+
+	@while $i <=$maxValue {
+		#{$className + $i} {
+			@include flex($maxValue, $i);
+		}
+
+		$i: $i+$step;
+	}
+}
+
+// GRID COLUMNS
+
+
+// TEXT
+@mixin text($className, $propertyName, $maxValue: 48, $minValue: 12, $step: 4, $unit: 'px') {
+	$i: $minValue;
+
+	@while $i <=$maxValue {
+		#{$className + $i} {
+			#{$propertyName}: #{$i + $unit} !important;
+		}
+
+		$i: $i+$step;
+	}
+}
+
+// TEXT
+
+
+
+// CHECKBOX
+// ====================================================================
+@mixin checkbox($width:20px,
+	$height: 20px,
+	$bgColor: #fff,
+	$bgColorActive:$c_profile_main,
+	$border: 0px,
+	$radius: 4px,
+	$borderColor: $c_profile_main,
+	$borderColorActive:$c_profile_main,
+	$bullet: transparent,
+	$bulletActive: #fff,
+	$marginRight: 14px) {
+
+	cursor: pointer;
+	display: inline-flex;
+    align-items: center;
+	input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+		z-index: -1;
+		display: block;
+
+		&:checked~.checkbox__box {
+			background-color: $bgColorActive;
+			pointer-events: none;
+			border-color: $borderColorActive;
+
+			svg {
+				fill: $bulletActive;
+			}
+		}
+
+		&:checked~.radio__box {
+			background-color: #DC5EFF;
+			pointer-events: none;
+
+            &:before{
+                border-color: #DC5EFF;
+            }
+		}
+	}
+
+	.checkbox__box {
+		@extend %flex_center;
+		transition: .3s;
+		min-height: $height;
+		min-width: $width;
+		height: $height;
+		width: $width;
+		background-color: $bgColor;
+		border: $border solid $borderColor;
+		border-radius: $radius;
+		line-height: inherit;
+		margin-right: $marginRight;
+
+		svg {
+			transition: .3s;
+			width: 13px;
+			height: 13px;
+			fill: $bullet;
+		}
+	}
+
+    .radio__box {
+        @extend %flex_center;
+        position: relative;
+        transition: .3s;
+        min-height: 10px;
+        min-width: 10px;
+        height: 10px;
+        width: 10px;
+        background-color: rgba(255, 255, 255, 0.15);
+        border-radius: $radius;
+        line-height: inherit;
+        margin-right: $marginRight;
+
+        &:before{
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+    }
+}
+
+
+// ====================================================================
+// CHECKBOX
+
+
+// ELLIPSIS
+// ====================================================================
+
+@mixin ellipsis($lines:3) {
+	display: -webkit-box;
+	-webkit-line-clamp: $lines;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	line-clamp: $lines;
+}
+
+// ====================================================================
+// ELLIPSIS
+
+
+// FONT SIZE
+// ====================================================================
+@function size($max, $min, $minw: 320px, $maxw: 1150) {
+	@return calc(#{$min} * 1px + (#{$max} - #{$min}) * ((100vw - #{$minw}) / #{$maxw}));
+}
+
+// ====================================================================
+// FONT SIZE
+
+
+// FLEX COLUMN
+// ====================================================================
+@mixin flex($base:2, $cols:1) {
+	flex: 0 1 calc(100% / #{$base} * #{$cols});
+	max-width: calc(100% / #{$base} * #{$cols});
+}
+
+// ====================================================================
+// FLEX COLUMN
+
+
+// ABSOLUTE CENTER
+// ====================================================================
+@mixin abs_center($top:50%, $left:50%, $tr_top:-50%, $tr_left: -50%) {
+	position: absolute;
+	top: $top;
+	left: $left;
+	transform: translate($tr_top, $tr_left);
+}
+
+// ====================================================================
+// ABSOLUTE CENTER
+
+
+// ASPECT RATIO
+// ====================================================================
+
+@mixin ratio($X, $Y, $width:auto, $fit:cover) {
+	position: relative;
+	width: $width;
+
+	&:before {
+		display: block;
+		content: "";
+		width: 100%;
+		padding-top: ($Y / $X) * 100%;
+	}
+
+	.ratio__box {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: $fit;
+		}
+	}
+}
+
+// ====================================================================
+// ASPECT RATIO

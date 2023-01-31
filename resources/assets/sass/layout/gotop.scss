@@ -1,0 +1,53 @@
+// GOTOP
+.gotop__wrap {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    transform: scale(0);
+    transition: .3s;
+    opacity: 0;
+    z-index: 999;
+}
+
+.gotop_toggle {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+}
+
+.gotop {
+    width: size(60, 45);
+    height: size(60, 45);
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    transition: .3s;
+    cursor: pointer;
+
+    span {
+        margin-bottom: -7px;
+        width: 15px;
+        height: 15px;
+        border-top: 2px solid silver;
+        border-left: 2px solid silver;
+        transform: rotate(45deg);
+        transition: .3s;
+    }
+
+    &:hover {
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+
+        span {
+            border-top: 2px solid red;
+            border-left: 2px solid red;
+
+        }
+    }
+}
+
+// GOTOP

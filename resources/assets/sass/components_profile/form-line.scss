@@ -1,0 +1,64 @@
+.form-line {
+    display: flex;
+    width: 100%;
+
+    @media all and (max-width:$md3) {
+        flex-wrap: wrap;
+    }
+
+    .form-line__left {
+        margin-right: 0;
+
+        input {
+            border-radius: 4px 0 0 4px;
+        }
+
+        @media all and (max-width:$md3) {
+            @include flex(1);
+
+            input {
+                border-radius: 4px 4px 0 0;
+            }
+        }
+    }
+
+    .form-line__btn {
+        min-height: 48px;
+        @extend %flex_center;
+        font-family: $fnt_main;
+        padding: 12px 32px;
+        color: $c_text_primary;
+        font-weight: 600;
+        line-height: 1.5;
+        transition: .3s;
+        cursor: pointer;
+        background-color: $c_profile_main;
+        border-radius: 0 4px 4px 0;
+
+        @media all and (max-width:$md1) {
+            padding: 12px 16px;
+        }
+
+        @media all and (max-width:$md3) {
+            @include flex(1);
+            border-radius: 0 0 4px 4px;
+        }
+
+        .form-line__arrow {
+            width: 12px;
+            height: 12px;
+            margin-left: 14px;
+            transition: .3s;
+
+            @media all and (max-width:$md1) {
+                display: none;
+            }
+        }
+
+        &:hover {
+            .form-line__arrow {
+                transform: translate(5px, 0);
+            }
+        }
+    }
+}
